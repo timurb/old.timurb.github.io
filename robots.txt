@@ -1,4 +1,4 @@
 User-agent: *
 Disallow: 
 
-Sitemap: http://timurbatyrshin.github.io/sitemap.xml 
+Sitemap: http://erthad.name/sitemap.xml 
