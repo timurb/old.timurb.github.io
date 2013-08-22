@@ -7,11 +7,8 @@
 	<meta name="author" content="Timur Batyrshin">
 
 	
-	<meta name="description" content="Бывает, при использовании какой-либо команды постоянно нужно бывает передавать ей длинные параметры. Например: 1
-2
-3
-aws din --region=eu
-aws din -- &hellip;">
+	<meta name="description" content="Часто бывает нужно развернуть на удаленный хост (управляемый при помощи chef) какие-то скрипты.
+Это не проблема, но не менее часто в этих скриптах &hellip;">
 	
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
@@ -85,6 +82,183 @@ aws din -- &hellip;">
     <article class="post">
 	<h2 class="title">
 		
+		<a href="/blog/2013/08/22/razvorachivaniie-skriptov/">
+		
+			Разворачивание скриптов</a>
+	</h2>
+	<div class="entry-content">
+		<p>Часто бывает нужно развернуть на удаленный хост (управляемый при помощи chef) какие-то скрипты.
+Это не проблема, но не менее часто в этих скриптах бывают нужны привязки конкретно к этому хосту.
+Можно, конечно, реализовать обработку параметров командной строки или загрузку данных из конфига,
+но первое добавляет кучу кода в скрипт и часто неудобно само по себе (нам нужно будет передать при
+каждом запуске скрипта, скажем, с пяток некоротких параметров, причем каждый раз одинаковы), а
+загрузка данных из конфига неудобна тем, что приходится обрабатывать случаи, когда конфиг не найден,
+какие-то параметры не задали и т.д., что тоже не всегда оправдано.</p>
+
+<p>К примеру, допустим, шеф у нас кладет на хост такой скрипт:</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+</pre></td><td class='code'><pre><code class='bash'><span class='line'><span class="c">#!/bin/sh</span>
+</span><span class='line'>
+</span><span class='line'>usage<span class="o">(){</span>
+</span><span class='line'> <span class="nb">echo</span> <span class="s2">&quot;Usage: $(basename &quot;</span><span class="nv">$0</span><span class="s2">&quot;) SITE&quot;</span>
+</span><span class='line'> <span class="nb">exit </span>1
+</span><span class='line'><span class="o">}</span>
+</span><span class='line'>
+</span><span class='line'><span class="nv">SITE</span><span class="o">=</span><span class="s2">&quot;$1&quot;</span>
+</span><span class='line'>
+</span><span class='line'><span class="o">[</span> -z <span class="s2">&quot;${SITE}&quot;</span> <span class="o">]</span> <span class="o">&amp;&amp;</span> usage
+</span><span class='line'>
+</span><span class='line'>mkdir <span class="s2">&quot;/var/www/${SITE}&quot;</span>
+</span><span class='line'>cat /etc/sitecfg/site.template | sed <span class="s2">&quot;s,@NAME@,${SITE},g&quot;</span> &gt; <span class="s2">&quot;/etc/nginx/sites-available/${SITE}&quot;</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>В этом скрипте хочется выделить в отдельные переменные несколько частей:</p>
+
+<ul>
+<li>путь к каталогам с сайтами (<code>/var/www</code>)</li>
+<li>имя темплейта (<code>/etc/sitecfg/site.template</code>)</li>
+<li>путь, куда мы кладем обработанный темплейт (<code>/etc/nginx/sites-available</code>)</li>
+<li>возможно, еще строку замены (<code>s,@NAME@,${SITE},g</code>)</li>
+</ul>
+
+
+<p>Ясно, что все эти переменные передавать через командную строку не будешь, как не будешь и создавать отдельный
+конфиг для их хранения. При этом, для них лучше задать именно переменные, т.к., например, мы можем решить хранить
+сайты не в <code>/var/www</code>, а в <code>/var/www/sites</code>, назвать темплейт более внятным именем и положить в более правильное место
+и т.д.</p>
+
+<p>Чтобы решить эту задачу, мы пишем скрипт как обычно, но в виде ERB-шаблона. Все нужные нам параметры
+придут от Chef-а. Первое желание написать его так:</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+</pre></td><td class='code'><pre><code class='erb'><span class='line'><span class="x">#!/bin/sh</span>
+</span><span class='line'>
+</span><span class='line'><span class="x">usage(){</span>
+</span><span class='line'><span class="x"> echo &quot;Usage: $(basename &quot;$0&quot;) SITE&quot;</span>
+</span><span class='line'><span class="x"> exit 1</span>
+</span><span class='line'><span class="x">}</span>
+</span><span class='line'>
+</span><span class='line'><span class="x">SITE=&quot;$1&quot;</span>
+</span><span class='line'>
+</span><span class='line'><span class="x">[ -z &quot;${SITE}&quot; ] &amp;&amp; usage</span>
+</span><span class='line'>
+</span><span class='line'><span class="x">mkdir &quot;</span><span class="cp">&lt;%=</span> <span class="vi">@sites_path</span> <span class="cp">%&gt;</span><span class="x">/${SITE}&quot;</span>
+</span><span class='line'><span class="x">cat &quot;</span><span class="cp">&lt;%=</span> <span class="vi">@site_template</span> <span class="cp">%&gt;</span><span class="x"> | sed &quot;</span><span class="cp">&lt;%=</span> <span class="vi">@subst_string</span> <span class="cp">%&gt;</span><span class="x">&quot; &gt; &quot;</span><span class="cp">&lt;%=</span> <span class="vi">@site_cfg_path</span> <span class="cp">%&gt;</span><span class="x">/${SITE}&quot;</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>Казалось бы, все нормально, однако легко заметить, что такие конструкции как минимум, нелегко читать, а значит легко допустить
+опечатку. Попробуйте найти, в каком месте я здесь забыл кавычку.</p>
+
+<p>Перепишем таким образом:</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+<span class='line-number'>18</span>
+<span class='line-number'>19</span>
+<span class='line-number'>20</span>
+</pre></td><td class='code'><pre><code class='erb'><span class='line'><span class="x">#!/bin/sh</span>
+</span><span class='line'>
+</span><span class='line'><span class="x"># Generated by Chef for </span><span class="cp">&lt;%=</span> <span class="n">node</span><span class="o">[</span><span class="s1">&#39;fqdn&#39;</span><span class="o">]</span> <span class="cp">%&gt;</span><span class="x"></span>
+</span><span class='line'>
+</span><span class='line'><span class="x">SITES_PATH=&quot;</span><span class="cp">&lt;%=</span> <span class="vi">@sites_path</span> <span class="cp">%&gt;</span><span class="x">&quot;</span>
+</span><span class='line'><span class="x">SITE_TEMPLATE=&quot;</span><span class="cp">&lt;%=</span> <span class="vi">@site_template</span> <span class="cp">%&gt;</span><span class="x">&quot;</span>
+</span><span class='line'><span class="x">SUBST_STRING=&quot;</span><span class="cp">&lt;%=</span> <span class="vi">@subst_string</span> <span class="cp">%&gt;</span><span class="x">&quot; </span>
+</span><span class='line'><span class="x">SITE_CFG_PATH=&quot;</span><span class="cp">&lt;%=</span> <span class="vi">@site_cfg_path</span> <span class="cp">%&gt;</span><span class="x">&quot;</span>
+</span><span class='line'>
+</span><span class='line'><span class="x">usage(){</span>
+</span><span class='line'><span class="x"> echo &quot;Usage: $(basename &quot;$0&quot;) SITE&quot;</span>
+</span><span class='line'><span class="x"> exit 1</span>
+</span><span class='line'><span class="x">}</span>
+</span><span class='line'>
+</span><span class='line'><span class="x">SITE=&quot;$1&quot;</span>
+</span><span class='line'>
+</span><span class='line'><span class="x">[ -z &quot;${SITE}&quot; ] &amp;&amp; usage</span>
+</span><span class='line'>
+</span><span class='line'><span class="x">mkdir &quot;${SITES_PATH}/${SITE}&quot;</span>
+</span><span class='line'><span class="x">cat &quot;${SITE_TEMPLATE}&quot; | sed &quot;${SUBST_STRING}&quot; &gt; &quot;${SITE_CFG_PATH}/${SITE}&quot;</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>В результате получим довольно аккуратный скрипт, который легко читать и отлаживать.</p>
+
+		
+		
+	</div>
+
+
+<div class="meta">
+	<div class="date">
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2013-08-22T08:45:00+04:00" pubdate data-updated="true">Aug 22<span>nd</span>, 2013</time></div>
+	<div class="tags">
+
+
+	<a class='category' href='/blog/categories/chef/'>chef</a>, <a class='category' href='/blog/categories/shell/'>shell</a>
+
+
+</div>
+	
+	<div class="comments"><a href="/blog/2013/08/22/razvorachivaniie-skriptov/#disqus_thread">Comments</a></div>
+	
+</div>
+</article>
+
+
+    <article class="post">
+	<h2 class="title">
+		
 		<a href="/blog/2013/08/20/sokrashchieniie-paramietrov/">
 		
 			Сокращение параметров командной строки</a>
@@ -145,6 +319,10 @@ aws din -- &hellip;">
 
 <time datetime="2013-08-20T11:46:00+04:00" pubdate data-updated="true">Aug 20<span>th</span>, 2013</time></div>
 	<div class="tags">
+
+
+	<a class='category' href='/blog/categories/shell/'>shell</a>
+
 
 </div>
 	
