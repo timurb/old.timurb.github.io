@@ -4,7 +4,7 @@
   <title><![CDATA[Category: shell | Erthad's blog]]></title>
   <link href="http://erthad.name/blog/categories/shell/atom.xml" rel="self"/>
   <link href="http://erthad.name/"/>
-  <updated>2013-08-22T09:24:42+04:00</updated>
+  <updated>2013-08-22T09:47:08+04:00</updated>
   <id>http://erthad.name/</id>
   <author>
     <name><![CDATA[Timur Batyrshin]]></name>
@@ -22,7 +22,7 @@
 Это не проблема, но не менее часто в этих скриптах бывают нужны привязки конкретно к этому хосту.
 Можно, конечно, реализовать обработку параметров командной строки или загрузку данных из конфига,
 но первое добавляет кучу кода в скрипт и часто неудобно само по себе (нам нужно будет передать при
-каждом запуске скрипта, скажем, с пяток некоротких параметров, причем каждый раз одинаковы), а
+каждом запуске скрипта, скажем, с пяток некоротких параметров, причем каждый раз одинаковых), а
 загрузка данных из конфига неудобна тем, что приходится обрабатывать случаи, когда конфиг не найден,
 какие-то параметры не задали и т.д., что тоже не всегда оправдано.</p>
 
@@ -61,7 +61,7 @@ cat /etc/sitecfg/site.template | sed &ldquo;s,@NAME@,${SITE},g&rdquo; > &ldquo;/
 
 <p>Чтобы решить эту задачу, мы пишем скрипт как обычно, но в виде ERB-шаблона. Все нужные нам параметры
 придут от Chef-а. Первое желание написать его так:
-```erb</p>
+```bash</p>
 
 <h1>!/bin/sh</h1>
 
@@ -75,14 +75,14 @@ cat /etc/sitecfg/site.template | sed &ldquo;s,@NAME@,${SITE},g&rdquo; > &ldquo;/
 <p>[ -z &ldquo;${SITE}&rdquo; ] &amp;&amp; usage</p>
 
 <p>mkdir &ldquo;&lt;%= @sites_path %>/${SITE}&rdquo;
-cat &ldquo;&lt;%= @site_template %> | sed &rdquo;&lt;%= @subst_string %>&ldquo; > &rdquo;&lt;%= @site_cfg_path %>/${SITE}&ldquo;
+cat &ldquo;&lt;%= @site_template %>&rdquo; | sed &ldquo;&lt;%= @subst_string %> > &rdquo;&lt;%= @site_cfg_path %>/${SITE}&ldquo;
 ```</p>
 
 <p>Казалось бы, все нормально, однако легко заметить, что такие конструкции как минимум, нелегко читать, а значит легко допустить
 опечатку. Попробуйте найти, в каком месте я здесь забыл кавычку.</p>
 
 <p>Перепишем таким образом:
-```erb</p>
+```bash</p>
 
 <h1>!/bin/sh</h1>
 
