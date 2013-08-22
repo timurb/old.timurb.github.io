@@ -4,7 +4,7 @@
   <title><![CDATA[Category: chef | Erthad's blog]]></title>
   <link href="http://erthad.name/blog/categories/chef/atom.xml" rel="self"/>
   <link href="http://erthad.name/"/>
-  <updated>2013-08-22T09:47:08+04:00</updated>
+  <updated>2013-08-22T09:48:44+04:00</updated>
   <id>http://erthad.name/</id>
   <author>
     <name><![CDATA[Timur Batyrshin]]></name>
@@ -61,7 +61,7 @@ cat /etc/sitecfg/site.template | sed &ldquo;s,@NAME@,${SITE},g&rdquo; > &ldquo;/
 
 <p>Чтобы решить эту задачу, мы пишем скрипт как обычно, но в виде ERB-шаблона. Все нужные нам параметры
 придут от Chef-а. Первое желание написать его так:
-```bash</p>
+```erb</p>
 
 <h1>!/bin/sh</h1>
 
@@ -82,7 +82,7 @@ cat &ldquo;&lt;%= @site_template %>&rdquo; | sed &ldquo;&lt;%= @subst_string %> 
 опечатку. Попробуйте найти, в каком месте я здесь забыл кавычку.</p>
 
 <p>Перепишем таким образом:
-```bash</p>
+```erb</p>
 
 <h1>!/bin/sh</h1>
 
