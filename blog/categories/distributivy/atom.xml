@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: дистрибутивы | Erthad's blog]]></title>
+  <link href="http://erthad.name/blog/categories/distributivy/atom.xml" rel="self"/>
+  <link href="http://erthad.name/"/>
+  <updated>2013-09-05T18:59:51+04:00</updated>
+  <id>http://erthad.name/</id>
+  <author>
+    <name><![CDATA[Timur Batyrshin]]></name>
+    <email><![CDATA[erthad@gmail.com]]></email>
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[elementary-os]]></title>
+    <link href="http://erthad.name/blog/2013/09/05/elementary-os/"/>
+    <updated>2013-09-05T18:35:00+04:00</updated>
+    <id>http://erthad.name/blog/2013/09/05/elementary-os</id>
+    <content type="html"><![CDATA[<p>Не так давно вышел очередной дистрибутив на базе Ubuntu, <a href="http://elementaryos.org">ElementaryOS</a>. Решил его посмотреть.</p>
+
+<p>Первое впечатление &mdash; скопировали MacOS?</p>
+
+<p>Смотрим дальше. Снизу док, сверху меню с приложениями. Никаких панелей больше нет. Как-то пусто, даже после гнома. Меню очень удобное, но приложений мало &mdash; с непривычки неудобно. Все меню и приложения в едином стиле &mdash; только необходимые кнопки, ничего лишнего, минимум настроек.
+Окошки, рамки, кнопки &mdash; все нарисовано красиво, глазу приятно.</p>
+
+<p>После пары минут щелкания туда-сюда задумываешься, а действительно ли нужны эти рабочие столы, виджеты, кучи менюшек и настроек, которые мы обычно видим в системах?</p>
+
+<p><em>Глюки:</em> из коробки у меня не работала кнопа Alt и колесо мышки, но возможно это из-за того что я его в VirtualBox запускал.</p>
+
+<p><em>Резюме:</em> если бы у меня был нетбук &mdash; однозначно поставил бы ElementaryOS. На рабочем компе/ноуте у меня чаще всего запущен терминал и красоты не нужны.</p>
+]]></content>
+  </entry>
+  
+</feed>
