@@ -4,7 +4,7 @@
   <title><![CDATA[Erthad's blog]]></title>
   <link href="http://erthad.name/atom.xml" rel="self"/>
   <link href="http://erthad.name/"/>
-  <updated>2013-10-12T12:34:11+04:00</updated>
+  <updated>2013-10-12T12:35:19+04:00</updated>
   <id>http://erthad.name/</id>
   <author>
     <name><![CDATA[Timur Batyrshin]]></name>
@@ -57,6 +57,9 @@
 после остановки и последующего запуска сервиса, но не применяются при рестарте.</p>
 
 <p>Проиллюстрирую примером.</p>
+
+<!-- more -->
+
 
 <p>Upstart-скрипт и лимиты для <a href="http://www.docker.io/">Docker</a> по-умолчанию:</p>
 
