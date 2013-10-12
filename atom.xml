@@ -4,7 +4,7 @@
   <title><![CDATA[Erthad's blog]]></title>
   <link href="http://erthad.name/atom.xml" rel="self"/>
   <link href="http://erthad.name/"/>
-  <updated>2013-09-16T19:46:05+04:00</updated>
+  <updated>2013-10-12T12:18:37+04:00</updated>
   <id>http://erthad.name/</id>
   <author>
     <name><![CDATA[Timur Batyrshin]]></name>
@@ -25,6 +25,98 @@
 <p>Точность, выверенность фраз, афоризмы, описание устройства мира, ритуальные тексты &mdash; в других местах.</p>
 
 <p>Исправления и указания на опечатки и ошибки, впрочем, приветствуются &mdash; для этого выделите ошибку и нажмите Ctrl-Enter.</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Upstart limits]]></title>
+    <link href="http://erthad.name/blog/2013/10/12/upstart-limits/"/>
+    <updated>2013-10-12T12:06:00+04:00</updated>
+    <id>http://erthad.name/blog/2013/10/12/upstart-limits</id>
+    <content type="html"><![CDATA[<p>Как всем известно, чтобы установить лимиты ресурсов для сервиса, запускаемого через Upstart
+нужно править соответствующий скрипт запуска, а лимиты, установленные в <code>/etc/security/limits.conf</code>
+не действуют. Однако я не встречал в доках упоминание о том, что эти лимиты применяются только
+после остановки и последующего запуска сервиса, но не применяются при рестарте.</p>
+
+<p>Проиллюстрирую примером.</p>
+
+<p>Upstart-скрипт и лимиты для <a href="http://www.docker.io/">Docker</a> по-умолчанию:</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>$  cat /etc/init/docker.conf | egrep -v '^($|#)'                                                                      * source c2d7a58
+</span><span class='line'>description     "Docker daemon"
+</span><span class='line'>start on filesystem and started lxc-net
+</span><span class='line'>stop on runlevel [!2345]
+</span><span class='line'>respawn
+</span><span class='line'>script
+</span><span class='line'>  /usr/bin/docker -d
+</span><span class='line'>end script
+</span><span class='line'>
+</span><span class='line'>~/git/timurbatyrshin.github.com
+</span><span class='line'>$  cat /proc/$(pidof docker)/limits | grep files                                                                      * source c2d7a58
+</span><span class='line'>Max open files            1024                 4096                 files     </span></code></pre></td></tr></table></div></figure>
+
+
+<p>Чуть-чуть меняем upstart-скрипт и смотрим результат:</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+<span class='line-number'>18</span>
+<span class='line-number'>19</span>
+<span class='line-number'>20</span>
+<span class='line-number'>21</span>
+<span class='line-number'>22</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>$  cat /etc/init/docker.conf | egrep -v '^($|#)'
+</span><span class='line'>description     "Docker daemon"
+</span><span class='line'>start on filesystem and started lxc-net
+</span><span class='line'>stop on runlevel [!2345]
+</span><span class='line'>respawn
+</span><span class='line'>limit nofile 65535 65535  # &lt;--- добавили эту строчку
+</span><span class='line'>script
+</span><span class='line'>  /usr/bin/docker -d
+</span><span class='line'>end script
+</span><span class='line'>
+</span><span class='line'>$  sudo restart docker
+</span><span class='line'>docker start/running, process 4721
+</span><span class='line'>
+</span><span class='line'>$  cat /proc/$(pidof docker)/limits | grep files
+</span><span class='line'>Max open files            1024                 4096                 files     
+</span><span class='line'>
+</span><span class='line'>$  sudo stop docker ; sudo start docker
+</span><span class='line'>docker stop/waiting
+</span><span class='line'>docker start/running, process 4772
+</span><span class='line'>
+</span><span class='line'>$  cat /proc/$(pidof docker)/limits | grep files
+</span><span class='line'>Max open files            65535                65535                files     </span></code></pre></td></tr></table></div></figure>
+
+
+<p>Как видим, лимиты при рестарте не изменяются, а меняются только при остановке-старте.</p>
 ]]></content>
   </entry>
   
