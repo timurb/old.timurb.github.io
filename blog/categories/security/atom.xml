@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: security | Erthad's blog]]></title>
+  <link href="http://erthad.name/blog/categories/security/atom.xml" rel="self"/>
+  <link href="http://erthad.name/"/>
+  <updated>2013-10-16T14:18:15+04:00</updated>
+  <id>http://erthad.name/</id>
+  <author>
+    <name><![CDATA[Timur Batyrshin]]></name>
+    <email><![CDATA[erthad@gmail.com]]></email>
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[PHPMyAdmin и Yandex SafeBrowsing]]></title>
+    <link href="http://erthad.name/blog/2013/10/16/phpmyadmin-i-yandex-safebrowsing/"/>
+    <updated>2013-10-16T14:05:00+04:00</updated>
+    <id>http://erthad.name/blog/2013/10/16/phpmyadmin-i-yandex-safebrowsing</id>
+    <content type="html"><![CDATA[<p>Иногда случается ситуация, когда <a href="http://api.yandex.ru/safebrowsing/">Yandex SafeBrowsing</a> <a href="http://www.yandex.com/infected?url=yandex.ru">помечает сайт</a>  как содержащий <code>Troj/JSRedir-MH</code>, причем, <a href="https://www.virustotal.com/">VirusTotal</a>  говорит, что сайт чистый по всем базам, кроме Yandex SafeBrowsing.
+В интернетах эту тему обсуждают много где, часто у людей эта проблема регулярно появляется и исчезает сама, в итоге приходят к выводу, что у яндекса что-то глючит.</p>
+
+<p>Как выяснилось, Yandex скорее всего таким образом реагирует на PHPMyAdmin. Проверьте, не установлен ли он у вас.</p>
+
+<p>Причем, для того, чтобы яндекс среагировал на него, у человека, открывшего PHPMyAdmin в броузере должно быть установлено приложение, использующее <a href="http://api.yandex.ru/safebrowsing/">Yandex SafeBrowsing</a> &mdash; например, Яндекс.Бар, или Яндекс.Браузер.</p>
+
+<p>Вывод: если вы пользуетесь PHPMyAdmin, или вообще занимаетесь поддержкой сайтов, продукты Яндекса лучше не использовать.</p>
+]]></content>
+  </entry>
+  
+</feed>
