@@ -4,7 +4,7 @@
   <title><![CDATA[Erthad's blog]]></title>
   <link href="http://erthad.name/atom.xml" rel="self"/>
   <link href="http://erthad.name/"/>
-  <updated>2013-10-27T12:51:29+04:00</updated>
+  <updated>2013-11-23T10:40:37+04:00</updated>
   <id>http://erthad.name/</id>
   <author>
     <name><![CDATA[Timur Batyrshin]]></name>
@@ -25,6 +25,20 @@
 <p>Точность, выверенность фраз, афоризмы, описание устройства мира, ритуальные тексты &mdash; в других местах.</p>
 
 <p>Исправления и указания на опечатки и ошибки, впрочем, приветствуются &mdash; для этого выделите ошибку и нажмите Ctrl-Enter.</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Ubuntu 13.XX и WiFi Broadcom]]></title>
+    <link href="http://erthad.name/blog/2013/11/23/ubuntu-13-dot-xx-i-wifi-broadcom/"/>
+    <updated>2013-11-23T10:34:00+04:00</updated>
+    <id>http://erthad.name/blog/2013/11/23/ubuntu-13-dot-xx-i-wifi-broadcom</id>
+    <content type="html"><![CDATA[<p>Если у вас в ноутбуке WiFi чип Broadcom (у меня BCM4313), вы наверняка уже слышали про проблемы с ним в Ubuntu 13.XX</p>
+
+<p>Для 13.04 решением было установить bcmwl-kernel-source из 12.10 (версии 5.100 вместо 6.20) и поставить его на холд.</p>
+
+<p>С новыми ядрами, идущими с 13.10 старая версия модуля уже не собирается. Но зато вроде бы починилась стандартная версия, из коробки.
+Уровень сигнала в трее показывается слабже, чем показывался раньше, но вроде бы работает все не хуже.</p>
 ]]></content>
   </entry>
   
