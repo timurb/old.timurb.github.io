@@ -3,12 +3,13 @@
 <html>
 <head>
 	<meta charset="utf-8">
-	<title>Redshift через месяц - Erthad's blog</title>
+	<title>Suspend to disk - Erthad's blog</title>
 	<meta name="author" content="Timur Batyrshin">
 
 	
-	<meta name="description" content="Месяц назад я поставил себе redshift, т.к. работать
-было невозможно &mdash; глаза болели. Прошел месяц и можно говорить о результатах. Глаза, конечно &hellip;">
+	<meta name="description" content="В убунту криво работает suspend to disk, настроить его можно несколькими способами:
+* стандартный ядерный &mdash; у меня толком не заработал
+* &hellip;">
 	
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
@@ -77,17 +78,33 @@
 		
 	
 	<div id="content" class="inner"><article class="post">
-	<h2 class="title">Redshift через месяц</h2>
-	<div class="entry-content"><p><a href="/blog/2013/09/16/ustalost%27-ghlaz/">Месяц назад</a> я поставил себе redshift, т.к. работать
-было невозможно &mdash; глаза болели.</p>
+	<h2 class="title">Suspend to Disk</h2>
+	<div class="entry-content"><p>В убунту криво работает suspend to disk, настроить его можно несколькими способами:
+* стандартный ядерный &mdash; у меня толком не заработал
+* tuxonice &mdash; работает отлично, но только если не зависнет во время засыпания при освобождении памяти.
+  Зависает когда много всего запущено. Например, очень часто виснет при запущенном броузере.
+* uswsusp &mdash; поставил только что. Навскидку работает более менее нормально, но:
+  * проверку MD5 нужно отключить, иначе ругается на несовпадение контрольных сумм (тем не менее, при этом показывает одинаковые суммы)
+  * шифрование образа не работает, т.к. <a href="https://bugs.launchpad.net/ubuntu/+source/uswsusp/+bug/736487">uswsusp не умеет работать с plymouth</a>
+  * сразу после просыпания комп усиленно работает диском и тормозит. Похоже, вытаскивает страницы памяти из свапа.</p>
 
-<p>Прошел месяц и можно говорить о результатах. Глаза, конечно, устают, но уже не так &mdash; можно просидеть за
-компьютером много часов подряд, а глаза не болят. Когда в комнате темно я дополнительно еще включаю USB-лампу,
-чтобы видно было клавиатуру.</p>
+<pre><code>Т.е. по ощущениям засыпание на диск становится не "более медленным и надежным засыпанием", а "выключением с полным сохранением сессии".
+</code></pre>
 
-<p>Исключение &mdash; глаза все же немного болят, если садиться за компьютер с самого утра.
-Сперва нужно размяться (все тело, не только глаза), потянуться, час-другой позаниматься другими делами,
-после этого можно и за компьютер сесть без особых последствий.</p>
+<p>Буду рад советам как это все исправить.</p>
+
+<p>Как включать hibernate в меню и как настраивать tuxonice я уже не помню, запишу для uswsusp, чтобы не забыть.</p>
+
+<ul>
+<li>Ставим <code>uswsusp</code>.</li>
+<li>Правим <code>/etc/uswsusp.conf</code>. Это также можно сделать и при помощи <code>dpkg-reconfigure uswsusp</code>, но вручную по-моему удобнее.</li>
+<li>Создаем <code>/etc/initramfs-tools/conf.d/resume</code>, в котором пишем <code>RESUME=/dev/sda1</code>. Здесь sda1 &mdash; диск со свапом. Это нужно для срабатывания просыпания при загрузке.</li>
+<li>Каждый раз при изменении этих файлов запускаем <code>sudo update-initramfs -u</code>. Без этого изменения останутся у нас на диске и не попадут в initrd.</li>
+<li>Строчку в <code>/etc/grub/default</code> добавлять НЕ надо. Это понадобилось бы, если бы мы не пользовались initramfs-tools.</li>
+<li>Создаем <code>/etc/pm/config.d/00sleep_module</code> с содержимым <code>SLEEP_MODULE="uswsusp"</code>. Это нужно, чтобы использовался <code>uswsusp</code> при вызовах <code>pm-hibernate</code>.</li>
+<li>У нас теперь должно заработать засыпание при помощи команды <code>sudo s2disk</code></li>
+</ul>
+
 </div>
 
 
@@ -104,11 +121,11 @@
   
 
 
-<time datetime="2013-10-12T12:19:00+04:00" pubdate data-updated="true">Oct 12<span>th</span>, 2013</time></div>
+<time datetime="2014-01-04T13:21:00+04:00" pubdate data-updated="true">Jan 4<span>th</span>, 2014</time></div>
 	<div class="tags">
 
 
-	<a class='category' href='/blog/categories/utilities/'>utilities</a>, <a class='category' href='/blog/categories/ghlaza/'>глаза</a>
+	<a class='category' href='/blog/categories/hibernate/'>hibernate</a>, <a class='category' href='/blog/categories/ubuntu/'>ubuntu</a>
 
 
 </div>
@@ -167,8 +184,8 @@
       
         
         // var disqus_developer = 1;
-        var disqus_identifier = 'http://erthad.name/blog/2013/10/12/redshift-chieriez-miesiats/';
-        var disqus_url = 'http://erthad.name/blog/2013/10/12/redshift-chieriez-miesiats/';
+        var disqus_identifier = 'http://erthad.name/blog/2014/01/04/suspend-to-disk/';
+        var disqus_url = 'http://erthad.name/blog/2014/01/04/suspend-to-disk/';
         var disqus_script = 'embed.js';
       
     (function () {

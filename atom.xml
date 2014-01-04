@@ -4,7 +4,7 @@
   <title><![CDATA[Erthad's blog]]></title>
   <link href="http://erthad.name/atom.xml" rel="self"/>
   <link href="http://erthad.name/"/>
-  <updated>2013-11-23T10:40:37+04:00</updated>
+  <updated>2014-01-04T19:25:02+04:00</updated>
   <id>http://erthad.name/</id>
   <author>
     <name><![CDATA[Timur Batyrshin]]></name>
@@ -25,6 +25,40 @@
 <p>Точность, выверенность фраз, афоризмы, описание устройства мира, ритуальные тексты &mdash; в других местах.</p>
 
 <p>Исправления и указания на опечатки и ошибки, впрочем, приветствуются &mdash; для этого выделите ошибку и нажмите Ctrl-Enter.</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Suspend to disk]]></title>
+    <link href="http://erthad.name/blog/2014/01/04/suspend-to-disk/"/>
+    <updated>2014-01-04T13:21:00+04:00</updated>
+    <id>http://erthad.name/blog/2014/01/04/suspend-to-disk</id>
+    <content type="html"><![CDATA[<p>В убунту криво работает suspend to disk, настроить его можно несколькими способами:
+* стандартный ядерный &mdash; у меня толком не заработал
+* tuxonice &mdash; работает отлично, но только если не зависнет во время засыпания при освобождении памяти.
+  Зависает когда много всего запущено. Например, очень часто виснет при запущенном броузере.
+* uswsusp &mdash; поставил только что. Навскидку работает более менее нормально, но:
+  * проверку MD5 нужно отключить, иначе ругается на несовпадение контрольных сумм (тем не менее, при этом показывает одинаковые суммы)
+  * шифрование образа не работает, т.к. <a href="https://bugs.launchpad.net/ubuntu/+source/uswsusp/+bug/736487">uswsusp не умеет работать с plymouth</a>
+  * сразу после просыпания комп усиленно работает диском и тормозит. Похоже, вытаскивает страницы памяти из свапа.</p>
+
+<pre><code>Т.е. по ощущениям засыпание на диск становится не "более медленным и надежным засыпанием", а "выключением с полным сохранением сессии".
+</code></pre>
+
+<p>Буду рад советам как это все исправить.</p>
+
+<p>Как включать hibernate в меню и как настраивать tuxonice я уже не помню, запишу для uswsusp, чтобы не забыть.</p>
+
+<ul>
+<li>Ставим <code>uswsusp</code>.</li>
+<li>Правим <code>/etc/uswsusp.conf</code>. Это также можно сделать и при помощи <code>dpkg-reconfigure uswsusp</code>, но вручную по-моему удобнее.</li>
+<li>Создаем <code>/etc/initramfs-tools/conf.d/resume</code>, в котором пишем <code>RESUME=/dev/sda1</code>. Здесь sda1 &mdash; диск со свапом. Это нужно для срабатывания просыпания при загрузке.</li>
+<li>Каждый раз при изменении этих файлов запускаем <code>sudo update-initramfs -u</code>. Без этого изменения останутся у нас на диске и не попадут в initrd.</li>
+<li>Строчку в <code>/etc/grub/default</code> добавлять НЕ надо. Это понадобилось бы, если бы мы не пользовались initramfs-tools.</li>
+<li>Создаем <code>/etc/pm/config.d/00sleep_module</code> с содержимым <code>SLEEP_MODULE="uswsusp"</code>. Это нужно, чтобы использовался <code>uswsusp</code> при вызовах <code>pm-hibernate</code>.</li>
+<li>У нас теперь должно заработать засыпание при помощи команды <code>sudo s2disk</code></li>
+</ul>
+
 ]]></content>
   </entry>
   
