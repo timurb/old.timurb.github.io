@@ -3,7 +3,7 @@ layout: post
 title: "Разворачивание скриптов"
 date: 2013-08-22 08:45
 comments: true
-categories: [chef, shell]
+categories: [chef, shell, configuration management]
 ---
 
 Часто бывает нужно развернуть на удаленный хост (управляемый при помощи chef) какие-то скрипты.

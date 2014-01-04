@@ -3,7 +3,7 @@ layout: post
 title: "elementary-os"
 date: 2013-09-05 18:35
 comments: true
-categories: обзоры, дистрибутивы
+categories: обзоры дистрибутивы
 ---
 
 Не так давно вышел очередной дистрибутив на базе Ubuntu, [ElementaryOS](http://elementaryos.org). Решил его посмотреть.
