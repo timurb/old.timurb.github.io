@@ -4,7 +4,7 @@
   <title><![CDATA[Erthad's blog]]></title>
   <link href="http://erthad.name/atom.xml" rel="self"/>
   <link href="http://erthad.name/"/>
-  <updated>2014-01-04T19:25:02+04:00</updated>
+  <updated>2014-01-08T19:06:23+04:00</updated>
   <id>http://erthad.name/</id>
   <author>
     <name><![CDATA[Timur Batyrshin]]></name>
@@ -25,6 +25,26 @@
 <p>Точность, выверенность фраз, афоризмы, описание устройства мира, ритуальные тексты &mdash; в других местах.</p>
 
 <p>Исправления и указания на опечатки и ошибки, впрочем, приветствуются &mdash; для этого выделите ошибку и нажмите Ctrl-Enter.</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[LinkedIn invitations]]></title>
+    <link href="http://erthad.name/blog/2014/01/08/linkedin-invitations/"/>
+    <updated>2014-01-08T18:53:00+04:00</updated>
+    <id>http://erthad.name/blog/2014/01/08/linkedin-invitations</id>
+    <content type="html"><![CDATA[<p>Всем, кто пользуется <a href="http://www.linkedin.com/">LinkedIn</a>, наверняка,
+периодически приходят приглашения в контакты от странных людей, которые
+хотят неизвестно чего. Кто-то забивает и просто их добавляет.
+Мне обычно неохота добавлять случайных людей просто для количества, но
+LinkedIn не дает напрямую написать человеку не из своих контактов (если,
+конечно, у тебя не премиум учетка).</p>
+
+<p>Чтобы написать человеку, который хочет тебя добавить в контакты, жмем на кнопку
+с конвертом в правом верхнем углу (на нем выскакивает оповещение), потом
+выбираем &ldquo;Invitations&rdquo;. В выпадающем списке около кнопки &ldquo;Accept&rdquo; выбираем Reply.</p>
+
+<p>Неоднократно забывал и не мог найти, где это находится, поэтому запишу здесь, пригодится.</p>
 ]]></content>
   </entry>
   
