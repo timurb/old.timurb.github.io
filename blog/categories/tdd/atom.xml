@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: tdd | Erthad's blog]]></title>
+  <link href="http://erthad.name/blog/categories/tdd/atom.xml" rel="self"/>
+  <link href="http://erthad.name/"/>
+  <updated>2014-03-27T22:07:37+04:00</updated>
+  <id>http://erthad.name/</id>
+  <author>
+    <name><![CDATA[Timur Batyrshin]]></name>
+    <email><![CDATA[erthad@gmail.com]]></email>
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[Тестирование правил мониторинга]]></title>
+    <link href="http://erthad.name/blog/2014/03/27/testirovanie-pravil-monitoringha/"/>
+    <updated>2014-03-27T21:53:00+04:00</updated>
+    <id>http://erthad.name/blog/2014/03/27/testirovanie-pravil-monitoringha</id>
+    <content type="html"><![CDATA[<p>Регулярно хочется формализовать некоторые правила, по которым должен работать сервер как &ldquo;черный ящик&rdquo;.</p>
+
+<ul>
+<li>&ldquo;Если места на диске осталось меньше 1Гб, должен прийти алерт от мониторинга&rdquo;</li>
+<li>&ldquo;Если сервис у нас лежит, должен прийти алерт от мониторинга&rdquo;</li>
+<li>&ldquo;При входе на сайт нас должно перекидывать на https&rdquo;</li>
+</ul>
+
+
+<p>и т.д.</p>
+
+<p>Задачу &ldquo;внешнего&rdquo; тестирования, наверное, может помочь решить <a href="https://github.com/gauntlt/gauntlt,">https://github.com/gauntlt/gauntlt,</a> а вот
+как писать спеки для заббикса?</p>
+
+<p>Зачем это нужно? Допустим, мы правим какой-то триггер, и в нем ошиблись &mdash; написали вместо гигабайтов байты.
+Когда мы об этом узнаем? Только уже когда проблема возникла. Для этого и нужно тестирование &mdash; создав
+аварийную ситуацию на тестовом сервере мы сможем узнать, правильно ли работает правило.</p>
+]]></content>
+  </entry>
+  
+</feed>
