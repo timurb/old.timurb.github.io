@@ -4,7 +4,7 @@
   <title><![CDATA[Category: размышления | Erthad's blog]]></title>
   <link href="http://erthad.name/blog/categories/razmyshlieniia/atom.xml" rel="self"/>
   <link href="http://erthad.name/"/>
-  <updated>2014-03-27T22:07:37+04:00</updated>
+  <updated>2014-03-28T13:54:59+04:00</updated>
   <id>http://erthad.name/</id>
   <author>
     <name><![CDATA[Timur Batyrshin]]></name>
@@ -35,6 +35,8 @@
 <p>Зачем это нужно? Допустим, мы правим какой-то триггер, и в нем ошиблись &mdash; написали вместо гигабайтов байты.
 Когда мы об этом узнаем? Только уже когда проблема возникла. Для этого и нужно тестирование &mdash; создав
 аварийную ситуацию на тестовом сервере мы сможем узнать, правильно ли работает правило.</p>
+
+<p>Никому не встречался инструмент для решения такой задачи?</p>
 ]]></content>
   </entry>
   
