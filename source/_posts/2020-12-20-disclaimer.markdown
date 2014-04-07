@@ -14,4 +14,6 @@ categories:
 
 Исправления и указания на опечатки и ошибки, впрочем, приветствуются -- для этого выделите ошибку и нажмите Ctrl-Enter.
 
-Связаться со мной можно написав письмо на <a href="mailto:erthad@gmail.com">erthad@gmail.com</a>.
+Примерный список моих нынешних профессиональных знаний и умений можно посмотреть в [профиле LinkedIn](http://www.linkedin.com/pub/timur-batyrshin/28/a52/2a2). 
+
+Связаться со мной можно написав письмо там же, либо написав на <a href="mailto:erthad@gmail.com">erthad@gmail.com</a>.
