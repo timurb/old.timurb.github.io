@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: patches | Erthad's blog]]></title>
+  <link href="http://erthad.name/blog/categories/patches/atom.xml" rel="self"/>
+  <link href="http://erthad.name/"/>
+  <updated>2014-04-07T17:34:37+04:00</updated>
+  <id>http://erthad.name/</id>
+  <author>
+    <name><![CDATA[Timur Batyrshin]]></name>
+    <email><![CDATA[erthad@gmail.com]]></email>
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[Broadcom 4313 и Ubuntu 13.10]]></title>
+    <link href="http://erthad.name/blog/2014/04/07/broadcom-4313-i-ubuntu-13-dot-10/"/>
+    <updated>2014-04-07T17:10:00+04:00</updated>
+    <id>http://erthad.name/blog/2014/04/07/broadcom-4313-i-ubuntu-13-dot-10</id>
+    <content type="html"><![CDATA[<p>Прикупил я с год назад ноут <a href="http://market.yandex.ru/model-spec.xml?modelid=10451594&amp;hid=91013">Lenovo B590</a> и
+в целом все с ним нормально, за исключением проблем с Wi-Fi.</p>
+
+<p>Стандартные драйвера от Ubuntu 13.04 встали нормально, но сеть не цеплял.
+В то время рецептом была установка bcmwl-kernel-source более старой версии, от Ubuntu 12.04 (5.XX вместо последней 6.20).
+Замечательно это все исправляло до примерно осени, когда обновилось ядро до 3.11 и совместимость с ним пропала.
+Некоторое время просидел на текущем bcmwl-kernel-source благо он стал к тому времени получше работать, но
+и с ним сигнал ловился плохо, и с некоторыми точками на стандарте 802.11n отказывался работать вообще.</p>
+
+<p>Недавно это задрало и решил как-то это дело исправить.
+Выяснилось, что теперь можно поставить broadcom-sta-dkms (кажется, это тот самый старый драйвер, о котором упоминал раньше),
+однако и он не собрался под новое ядро. На этот раз нашел к нему патч: <a href="http://www.mindwerks.net/wp-content/uploads/2013/10/wl_3.10.patch">http://www.mindwerks.net/wp-content/uploads/2013/10/wl_3.10.patch</a>
+Применяем его находясь примерно в <code>/usr/src/broadcom-sta-5.100.82.112</code>, делаем <code>dpkg-reconfigure broadcom-sta-dkms</code> и перегружаемся, и все работает замечательно (вместо перезагрузки можно выгрузить старый модуль, загрузить новый, но на тот момент у меня не хватило
+на это воли).</p>
+
+<p>Вероятно, в новых версиях ядра все снова отвалится, будем решать этот вопрос снова.</p>
+
+<p>Как вариант, можно поменять сетевуху на одну из следующих:
+* WLAN, Non-Intel 1x1 11bgn + BT4.0 Combo, Broadcom 4313 + 20702 20200100
+20200101
+* WLAN, Non-Intel 2x2 11abgn + BT4.0 Combo, Broadcom 43228 + 20702 20200098
+20200099
+* WLAN, Intel 2x2 11bgn + BT4.0 Combo, Jackson Peak 1 20200078 (это что-то типа INTEL 2230 WIRELESS-N WIFI MINICARD LC 20200078 4W3765)
+* WLAN, Non-Intel 1x1 11bgn, Broadcom BCM4313 1x1 BGN MOW 20200102
+* WLAN, Non-Intel 1x1 11bgn, Realtek bgn 1x1 HMC WLAN Stockton 20200016 (это скорее всего Realtek 8188 или что-то подобное)</p>
+
+<p>Из этих нас, очевидно интересуют Intel и Realtek. Intel стоит 1-1.5тыр в юлмарте, Realtek можно попробовать наковырять в Алтыне за 500р.</p>
+
+<p>Для использования остальных железок скорее всего придется перепрошивать биос. Скорее всего, это не сложно.</p>
+]]></content>
+  </entry>
+  
+</feed>
