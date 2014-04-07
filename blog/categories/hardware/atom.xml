@@ -4,7 +4,7 @@
   <title><![CDATA[Category: hardware | Erthad's blog]]></title>
   <link href="http://erthad.name/blog/categories/hardware/atom.xml" rel="self"/>
   <link href="http://erthad.name/"/>
-  <updated>2014-04-07T17:41:10+04:00</updated>
+  <updated>2014-04-07T17:43:14+04:00</updated>
   <id>http://erthad.name/</id>
   <author>
     <name><![CDATA[Timur Batyrshin]]></name>
@@ -28,10 +28,10 @@
 и с ним сигнал ловился плохо, и с некоторыми точками на стандарте 802.11n отказывался работать вообще.</p>
 
 <p>Недавно это задрало и решил как-то это дело исправить.
-Выяснилось, что теперь можно поставить broadcom-sta-dkms (кажется, это тот самый старый драйвер, о котором упоминал раньше),
-однако и он не собрался под новое ядро. На этот раз нашел к нему патч: <a href="http://www.mindwerks.net/wp-content/uploads/2013/10/wl_3.10.patch">http://www.mindwerks.net/wp-content/uploads/2013/10/wl_3.10.patch</a>
+Выяснилось, что теперь можно поставить broadcom-sta-dkms (кажется, это тот самый старый драйвер, о котором упоминал раньше, но в
+новой обертке), однако и он не собрался под новое ядро. На этот раз нашел к нему патч: <a href="http://www.mindwerks.net/wp-content/uploads/2013/10/wl_3.10.patch">http://www.mindwerks.net/wp-content/uploads/2013/10/wl_3.10.patch</a>
 Применяем его находясь примерно в <code>/usr/src/broadcom-sta-5.100.82.112</code>, делаем <code>dpkg-reconfigure broadcom-sta-dkms</code> и перегружаемся, и все работает замечательно (вместо перезагрузки можно выгрузить старый модуль, загрузить новый, но на тот момент у меня не хватило
-на это воли).</p>
+ воли сделать это правильно).</p>
 
 <p>Вероятно, в новых версиях ядра все снова отвалится, будем решать этот вопрос снова.</p>
 
