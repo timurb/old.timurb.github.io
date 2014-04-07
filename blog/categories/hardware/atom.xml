@@ -4,7 +4,7 @@
   <title><![CDATA[Category: hardware | Erthad's blog]]></title>
   <link href="http://erthad.name/blog/categories/hardware/atom.xml" rel="self"/>
   <link href="http://erthad.name/"/>
-  <updated>2014-04-07T17:39:27+04:00</updated>
+  <updated>2014-04-07T17:40:43+04:00</updated>
   <id>http://erthad.name/</id>
   <author>
     <name><![CDATA[Timur Batyrshin]]></name>
@@ -35,12 +35,16 @@
 
 <p>Вероятно, в новых версиях ядра все снова отвалится, будем решать этот вопрос снова.</p>
 
-<p>Как вариант, можно поменять сетевуху на одну из следующих:
- * WLAN, Non-Intel 1x1 11bgn + BT4.0 Combo, Broadcom 4313 + 20702 20200100, 20200101
- * WLAN, Non-Intel 2x2 11abgn + BT4.0 Combo, Broadcom 43228 + 20702 20200098, 20200099
- * WLAN, Intel 2x2 11bgn + BT4.0 Combo, Jackson Peak 1 20200078 (это что-то типа INTEL 2230 WIRELESS-N WIFI MINICARD LC 20200078 4W3765)
- * WLAN, Non-Intel 1x1 11bgn, Broadcom BCM4313 1x1 BGN MOW 20200102
- * WLAN, Non-Intel 1x1 11bgn, Realtek bgn 1x1 HMC WLAN Stockton 20200016 (это скорее всего Realtek 8188 или что-то подобное)</p>
+<p>Как вариант, можно поменять сетевуху на одну из следующих:</p>
+
+<ul>
+<li>WLAN, Non-Intel 1x1 11bgn + BT4.0 Combo, Broadcom 4313 + 20702 20200100, 20200101</li>
+<li>WLAN, Non-Intel 2x2 11abgn + BT4.0 Combo, Broadcom 43228 + 20702 20200098, 20200099</li>
+<li>WLAN, Intel 2x2 11bgn + BT4.0 Combo, Jackson Peak 1 20200078 (это что-то типа INTEL 2230 WIRELESS-N WIFI MINICARD LC 20200078 4W3765)</li>
+<li>WLAN, Non-Intel 1x1 11bgn, Broadcom BCM4313 1x1 BGN MOW 20200102</li>
+<li>WLAN, Non-Intel 1x1 11bgn, Realtek bgn 1x1 HMC WLAN Stockton 20200016 (это скорее всего Realtek 8188 или что-то подобное)</li>
+</ul>
+
 
 <p>Из этих нас, очевидно интересуют Intel и Realtek. Intel стоит 1-1.5тыр в юлмарте, Realtek можно попробовать наковырять в Алтыне за 500р.</p>
 
