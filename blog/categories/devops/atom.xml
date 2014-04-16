@@ -4,7 +4,7 @@
   <title><![CDATA[Category: devops | Erthad's blog]]></title>
   <link href="http://erthad.name/blog/categories/devops/atom.xml" rel="self"/>
   <link href="http://erthad.name/"/>
-  <updated>2014-04-16T14:05:19+04:00</updated>
+  <updated>2014-04-16T14:08:59+04:00</updated>
   <id>http://erthad.name/</id>
   <author>
     <name><![CDATA[Timur Batyrshin]]></name>
@@ -22,6 +22,9 @@
 Про это пишут большое количество статей, кто-то говорит про культуру, кто-то
 про задачи бизнеса, кто-то про автоматизацию, сравнивают с Agile, но ясности
 это не прибавляет. Внесу и я свои пять копеек на этот счет.</p>
+
+<!-- more -->
+
 
 <p>По мне так говорить о devops смысла нет вообще — правильнее говорить о том,
 чтобы хорошо выполнять свою работу, внимательно относиться к другим участникам
