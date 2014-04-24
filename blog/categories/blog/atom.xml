@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: blog | Erthad's blog]]></title>
+  <link href="http://erthad.name/blog/categories/blog/atom.xml" rel="self"/>
+  <link href="http://erthad.name/"/>
+  <updated>2014-04-24T23:35:12+04:00</updated>
+  <id>http://erthad.name/</id>
+  <author>
+    <name><![CDATA[Timur Batyrshin]]></name>
+    <email><![CDATA[erthad@gmail.com]]></email>
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[Трансляция блога в твиттер]]></title>
+    <link href="http://erthad.name/blog/2014/04/24/transliatsiia-blogha-v-tvittier/"/>
+    <updated>2014-04-24T23:32:00+04:00</updated>
+    <id>http://erthad.name/blog/2014/04/24/transliatsiia-blogha-v-tvittier</id>
+    <content type="html"><![CDATA[<p>Настроил <a href="https://zapier.com">Zapier</a> для трансляции блога в твиттер.
+Эта запись будет проверкой связи.</p>
+]]></content>
+  </entry>
+  
+</feed>
