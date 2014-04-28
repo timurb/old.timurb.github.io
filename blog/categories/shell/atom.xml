@@ -4,7 +4,7 @@
   <title><![CDATA[Category: shell | Erthad's blog]]></title>
   <link href="http://erthad.name/blog/categories/shell/atom.xml" rel="self"/>
   <link href="http://erthad.name/"/>
-  <updated>2014-04-24T23:35:12+04:00</updated>
+  <updated>2014-04-28T13:56:30+04:00</updated>
   <id>http://erthad.name/</id>
   <author>
     <name><![CDATA[Timur Batyrshin]]></name>
@@ -12,6 +12,55 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Сортировка версий на шелле]]></title>
+    <link href="http://erthad.name/blog/2014/04/28/sortirovka-viersii-na-shiellie/"/>
+    <updated>2014-04-28T13:42:00+04:00</updated>
+    <id>http://erthad.name/blog/2014/04/28/sortirovka-viersii-na-shiellie</id>
+    <content type="html"><![CDATA[<p>Периодически сталкиваюсь с задачей: как сравнить две версии вида X1.Y1.Z1 на шелле.
+Очень часто это делают при помощи разнообразных врапперов.</p>
+
+<!-- more -->
+
+
+<p>На Ruby:</p>
+
+<p>```ruby
+Gem::Version.new(&lsquo;1.22.3&rsquo;) &lt; Gem::Version.new(&lsquo;1.2.3&rsquo;)</p>
+
+<h1>=> false</h1>
+
+<p>```</p>
+
+<p>Или на Python:</p>
+
+<p>```python
+pkg_resources.parse_version(&lsquo;1.22.3&rsquo;) &lt; pkg_resources.parse_version(&lsquo;1.2.3&rsquo;)</p>
+
+<h1>False</h1>
+
+<p>```</p>
+
+<p>Однако есть простой способ (<a href="http://stackoverflow.com/a/15324047/308871">о котором я позабыл</a>)
+сравнить две версии на шелле, не запуская никаких дополнительных скриптовых языков:
+```bash
+cat | sort -V &lt;&lt; EOF
+1.22.3
+1.2.3
+EOF</p>
+
+<h1>1.2.3</h1>
+
+<h1>1.22.3</h1>
+
+<p>```</p>
+
+<p>Запишу здесь, чтобы больше об этом не забывать.</p>
+
+<p>Из минусов &mdash; скорее всего, не будет работать на странных системах типа MacOSX.</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Разворачивание скриптов]]></title>
