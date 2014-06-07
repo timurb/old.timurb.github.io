@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: github | Erthad's blog]]></title>
+  <link href="http://erthad.name/blog/categories/github/atom.xml" rel="self"/>
+  <link href="http://erthad.name/"/>
+  <updated>2014-06-07T21:42:39+04:00</updated>
+  <id>http://erthad.name/</id>
+  <author>
+    <name><![CDATA[Timur Batyrshin]]></name>
+    <email><![CDATA[erthad@gmail.com]]></email>
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[Переименовал учетку Github]]></title>
+    <link href="http://erthad.name/blog/2014/06/07/pierieimienoval-uchietku-github/"/>
+    <updated>2014-06-07T21:40:00+04:00</updated>
+    <id>http://erthad.name/blog/2014/06/07/pierieimienoval-uchietku-github</id>
+    <content type="html"><![CDATA[<p>Переименовал учетку github в более короткую. Теперь я <a href="https://github.com/timurb">timurb</a> (был timurbatyrshin).</p>
+
+<p>Если увидите, что где-то что-то отвалилось из-за этого, просьба сообщать.</p>
+]]></content>
+  </entry>
+  
+</feed>
