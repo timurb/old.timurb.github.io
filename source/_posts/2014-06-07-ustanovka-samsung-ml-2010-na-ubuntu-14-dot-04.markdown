@@ -3,7 +3,7 @@ layout: post
 title: "Установка Samsung ML-2010 на Ubuntu 14.04"
 date: 2014-06-07 19:13
 comments: true
-categories: ubuntu drivers
+categories: ubuntu drivers 14.04 printer
 ---
 Обновление Ubuntu до версии 14.04 прошло на удивление без косяков -- ничего из основных устройств и приложений
 не отвалилось. Мелкие косяки все же есть -- отвалился принтер Samsung ML-2010 и поддержка китайского языка
