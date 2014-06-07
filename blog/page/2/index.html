@@ -7,8 +7,7 @@
 	<meta name="author" content="Timur Batyrshin">
 
 	
-	<meta name="description" content="Бегло прошелся по докам к Ansible.
-Попробую сравнить с Chef и Puppet, с которыми у меня есть хороший опыт работы. Интересная штука, но своеобразная &hellip;">
+	<meta name="description" content="Если у вас в ноутбуке WiFi чип Broadcom (у меня BCM4313), вы наверняка уже слышали про проблемы с ним в Ubuntu 13.XX Для 13.04 решением было &hellip;">
 	
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
@@ -77,6 +76,54 @@
 		
 	
 	<div id="content" class="inner">
+
+
+    <article class="post">
+	<h2 class="title">
+		
+		<a href="/blog/2013/11/23/ubuntu-13-dot-xx-i-wifi-broadcom/">
+		
+			Ubuntu 13.XX и WiFi Broadcom</a>
+	</h2>
+	<div class="entry-content">
+		<p>Если у вас в ноутбуке WiFi чип Broadcom (у меня BCM4313), вы наверняка уже слышали про проблемы с ним в Ubuntu 13.XX</p>
+
+<p>Для 13.04 решением было установить bcmwl-kernel-source из 12.10 (версии 5.100 вместо 6.20) и поставить его на холд.</p>
+
+<p>С новыми ядрами, идущими с 13.10 старая версия модуля уже не собирается. Но зато вроде бы починилась стандартная версия, из коробки.
+Уровень сигнала в трее показывается слабже, чем показывался раньше, но вроде бы работает все не хуже.</p>
+
+		
+		
+	</div>
+
+
+<div class="meta">
+	<div class="date">
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2013-11-23T10:34:00+04:00" pubdate data-updated="true">Nov 23<span>rd</span>, 2013</time></div>
+	<div class="tags">
+
+
+	<a class='category' href='/blog/categories/ubuntu/'>ubuntu</a>
+
+
+</div>
+	
+	<div class="comments"><a href="/blog/2013/11/23/ubuntu-13-dot-xx-i-wifi-broadcom/#disqus_thread">Comments</a></div>
+	
+</div>
+</article>
 
 
     <article class="post">
@@ -536,82 +583,6 @@
 </div>
 	
 	<div class="comments"><a href="/blog/2013/08/22/razvorachivaniie-skriptov/#disqus_thread">Comments</a></div>
-	
-</div>
-</article>
-
-
-    <article class="post">
-	<h2 class="title">
-		
-		<a href="/blog/2013/08/20/sokrashchieniie-paramietrov/">
-		
-			Сокращение параметров командной строки</a>
-	</h2>
-	<div class="entry-content">
-		<p>Бывает, при использовании какой-либо команды постоянно нужно бывает передавать ей длинные параметры.</p>
-
-<p>Например:</p>
-
-<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-</pre></td><td class='code'><pre><code class='bash'><span class='line'>aws din --region<span class="o">=</span>eu
-</span><span class='line'>aws din --region<span class="o">=</span>ap
-</span><span class='line'>aws start i-39b17e77 --region<span class="o">=</span>us
-</span></code></pre></td></tr></table></div></figure>
-
-
-<p>Можно создать алиасы, но это не всегда бывает применимо &mdash; например, в случае когда команда не принимает параметры
-до операции, алиас создать не так просто.</p>
-
-<p>Выход такой: свернем параметр до переменной:</p>
-
-<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-<span class='line-number'>7</span>
-</pre></td><td class='code'><pre><code class='bash'><span class='line'><span class="nb">export </span><span class="nv">EU</span><span class="o">=</span><span class="s2">&quot;--region=eu&quot;</span>
-</span><span class='line'><span class="nb">export </span><span class="nv">AP</span><span class="o">=</span><span class="s2">&quot;--region=ap&quot;</span>
-</span><span class='line'><span class="nb">export </span><span class="nv">US</span><span class="o">=</span><span class="s2">&quot;--region=us&quot;</span>
-</span><span class='line'>
-</span><span class='line'>aws din <span class="nv">$EU</span>
-</span><span class='line'>aws din <span class="nv">$AP</span>
-</span><span class='line'>aws start i-39b17e77 <span class="nv">$US</span>
-</span></code></pre></td></tr></table></div></figure>
-
-
-		
-		
-	</div>
-
-
-<div class="meta">
-	<div class="date">
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2013-08-20T11:46:00+04:00" pubdate data-updated="true">Aug 20<span>th</span>, 2013</time></div>
-	<div class="tags">
-
-
-	<a class='category' href='/blog/categories/shell/'>shell</a>
-
-
-</div>
-	
-	<div class="comments"><a href="/blog/2013/08/20/sokrashchieniie-paramietrov/#disqus_thread">Comments</a></div>
 	
 </div>
 </article>

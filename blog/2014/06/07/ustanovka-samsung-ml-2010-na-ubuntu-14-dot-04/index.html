@@ -3,11 +3,12 @@
 <html>
 <head>
 	<meta charset="utf-8">
-	<title>Disclaimer - Erthad's blog</title>
+	<title>Установка Samsung ML-2010 на Ubuntu 14.04 - Erthad's blog</title>
 	<meta name="author" content="Timur Batyrshin">
 
 	
-	<meta name="description" content="Этот блог задумывался как поток сознания обо всем, касающемся технических тем. Здесь я намерено не стараюсь подбирать точные слова и формулировки, &hellip;">
+	<meta name="description" content="Обновление Ubuntu до версии 14.04 прошло на удивление без косяков &mdash; ничего из основных устройств и приложений
+не отвалилось. Мелкие косяки все &hellip;">
 	
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
@@ -76,18 +77,23 @@
 		
 	
 	<div id="content" class="inner"><article class="post">
-	<h2 class="title">Disclaimer</h2>
-	<div class="entry-content"><p>Этот блог задумывался как поток сознания обо всем, касающемся технических тем.</p>
+	<h2 class="title">Установка Samsung ML-2010 на Ubuntu 14.04</h2>
+	<div class="entry-content"><p>Обновление Ubuntu до версии 14.04 прошло на удивление без косяков &mdash; ничего из основных устройств и приложений
+не отвалилось. Мелкие косяки все же есть &mdash; отвалился принтер Samsung ML-2010 и поддержка китайского языка
+в Chrome.</p>
 
-<p>Здесь я намерено не стараюсь подбирать точные слова и формулировки, зачастую после написания даже не проверяю текст.</p>
+<p>Принтер системой определялся, но не печатал.
+Наконец-то нашел пару часов и установил драйвера для принтера. Делается это примерно так:</p>
 
-<p>Точность, выверенность фраз, афоризмы, описание устройства мира, ритуальные тексты &mdash; в других местах.</p>
+<p>Качаем и распаковываем универсальный драйвер принтера:
+<a href="http://downloadcenter.samsung.com/content/DR/200902/20090225163328453/UnifiedLinuxDriver.tar.gz">http://downloadcenter.samsung.com/content/DR/200902/20090225163328453/UnifiedLinuxDriver.tar.gz</a></p>
 
-<p>Исправления и указания на опечатки и ошибки, впрочем, приветствуются &mdash; для этого выделите ошибку и нажмите Ctrl-Enter.</p>
+<p>С использованием скриптов установки у меня завести принтер не получилось, поэтому делаем все вручную.</p>
 
-<p>Примерный список моих нынешних профессиональных знаний и умений можно посмотреть в <a href="http://www.linkedin.com/pub/timur-batyrshin/28/a52/2a2">профиле LinkedIn</a>.</p>
+<p>Берем нужный PPD из <code>cdroot/Linux/noarch/at_opt/share/ppd</code> и подсовываем его принтеру, который у нас Ubuntu нашла сама.
+Он требует фильтр <code>/usr/lib/cups/filter/rastertosamsungspl</code>. Кладем его из этого же архива к себе в систему.</p>
 
-<p>Связаться со мной можно написав письмо там же, либо написав на <a href="mailto:erthad@gmail.com"><a href="&#109;&#x61;&#x69;&#x6c;&#116;&#111;&#58;&#x65;&#114;&#x74;&#x68;&#x61;&#100;&#x40;&#103;&#x6d;&#x61;&#105;&#108;&#46;&#99;&#111;&#109;">&#101;&#114;&#116;&#104;&#97;&#x64;&#x40;&#x67;&#x6d;&#97;&#105;&#108;&#46;&#99;&#x6f;&#x6d;</a></a>.</p>
+<p>Чтобы не искать их потом еще раз, я положил их <a href="/files">сюда</a>.</p>
 </div>
 
 
@@ -104,8 +110,12 @@
   
 
 
-<time datetime="2020-12-20T00:00:00+04:00" pubdate data-updated="true">Dec 20<span>th</span>, 2020</time></div>
+<time datetime="2014-06-07T19:13:00+04:00" pubdate data-updated="true">Jun 7<span>th</span>, 2014</time></div>
 	<div class="tags">
+
+
+	<a class='category' href='/blog/categories/drivers/'>drivers</a>, <a class='category' href='/blog/categories/ubuntu/'>ubuntu</a>
+
 
 </div>
 	
@@ -131,6 +141,12 @@
 </div>
 
 
+
+<section id="comment">
+    <h2 class="title">Comments</h2>
+    <div id="disqus_thread" aria-live="polite"><noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</div>
+</section>
 </div>
 	<footer id="footer" class="inner">Copyright &copy; 2014
 
@@ -151,6 +167,22 @@
 })(jQuery);
 </script> <!-- Delete or comment this line to disable Fancybox -->
 
+
+<script type="text/javascript">
+      var disqus_shortname = 'erthadsblog';
+      
+        
+        // var disqus_developer = 1;
+        var disqus_identifier = 'http://erthad.name/blog/2014/06/07/ustanovka-samsung-ml-2010-na-ubuntu-14-dot-04/';
+        var disqus_url = 'http://erthad.name/blog/2014/06/07/ustanovka-samsung-ml-2010-na-ubuntu-14-dot-04/';
+        var disqus_script = 'embed.js';
+      
+    (function () {
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      dsq.src = '//go.disqus.com/' + disqus_script;
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    }());
+</script>
 
 
 

@@ -4,7 +4,7 @@
   <title><![CDATA[Category: ubuntu | Erthad's blog]]></title>
   <link href="http://erthad.name/blog/categories/ubuntu/atom.xml" rel="self"/>
   <link href="http://erthad.name/"/>
-  <updated>2014-04-28T13:56:30+04:00</updated>
+  <updated>2014-06-07T19:31:09+04:00</updated>
   <id>http://erthad.name/</id>
   <author>
     <name><![CDATA[Timur Batyrshin]]></name>
@@ -12,6 +12,30 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Установка Samsung ML-2010 на Ubuntu 14.04]]></title>
+    <link href="http://erthad.name/blog/2014/06/07/ustanovka-samsung-ml-2010-na-ubuntu-14-dot-04/"/>
+    <updated>2014-06-07T19:13:00+04:00</updated>
+    <id>http://erthad.name/blog/2014/06/07/ustanovka-samsung-ml-2010-na-ubuntu-14-dot-04</id>
+    <content type="html"><![CDATA[<p>Обновление Ubuntu до версии 14.04 прошло на удивление без косяков &mdash; ничего из основных устройств и приложений
+не отвалилось. Мелкие косяки все же есть &mdash; отвалился принтер Samsung ML-2010 и поддержка китайского языка
+в Chrome.</p>
+
+<p>Принтер системой определялся, но не печатал.
+Наконец-то нашел пару часов и установил драйвера для принтера. Делается это примерно так:</p>
+
+<p>Качаем и распаковываем универсальный драйвер принтера:
+<a href="http://downloadcenter.samsung.com/content/DR/200902/20090225163328453/UnifiedLinuxDriver.tar.gz">http://downloadcenter.samsung.com/content/DR/200902/20090225163328453/UnifiedLinuxDriver.tar.gz</a></p>
+
+<p>С использованием скриптов установки у меня завести принтер не получилось, поэтому делаем все вручную.</p>
+
+<p>Берем нужный PPD из <code>cdroot/Linux/noarch/at_opt/share/ppd</code> и подсовываем его принтеру, который у нас Ubuntu нашла сама.
+Он требует фильтр <code>/usr/lib/cups/filter/rastertosamsungspl</code>. Кладем его из этого же архива к себе в систему.</p>
+
+<p>Чтобы не искать их потом еще раз, я положил их <a href="/files">сюда</a>.</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Broadcom 4313 и Ubuntu 13.10]]></title>

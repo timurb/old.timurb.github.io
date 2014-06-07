@@ -4,7 +4,7 @@
   <title><![CDATA[Erthad's blog]]></title>
   <link href="http://erthad.name/atom.xml" rel="self"/>
   <link href="http://erthad.name/"/>
-  <updated>2014-04-28T13:56:30+04:00</updated>
+  <updated>2014-06-07T19:31:09+04:00</updated>
   <id>http://erthad.name/</id>
   <author>
     <name><![CDATA[Timur Batyrshin]]></name>
@@ -28,7 +28,31 @@
 
 <p>Примерный список моих нынешних профессиональных знаний и умений можно посмотреть в <a href="http://www.linkedin.com/pub/timur-batyrshin/28/a52/2a2">профиле LinkedIn</a>.</p>
 
-<p>Связаться со мной можно написав письмо там же, либо написав на <a href="mailto:erthad@gmail.com"><a href="&#x6d;&#x61;&#x69;&#x6c;&#x74;&#111;&#x3a;&#x65;&#114;&#116;&#104;&#x61;&#100;&#64;&#103;&#109;&#97;&#105;&#108;&#x2e;&#x63;&#111;&#109;">&#x65;&#x72;&#116;&#104;&#97;&#x64;&#64;&#103;&#109;&#x61;&#x69;&#x6c;&#x2e;&#99;&#x6f;&#109;</a></a>.</p>
+<p>Связаться со мной можно написав письмо там же, либо написав на <a href="mailto:erthad@gmail.com"><a href="&#109;&#x61;&#x69;&#x6c;&#116;&#111;&#58;&#x65;&#114;&#x74;&#x68;&#x61;&#100;&#x40;&#103;&#x6d;&#x61;&#105;&#108;&#46;&#99;&#111;&#109;">&#101;&#114;&#116;&#104;&#97;&#x64;&#x40;&#x67;&#x6d;&#97;&#105;&#108;&#46;&#99;&#x6f;&#x6d;</a></a>.</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Установка Samsung ML-2010 на Ubuntu 14.04]]></title>
+    <link href="http://erthad.name/blog/2014/06/07/ustanovka-samsung-ml-2010-na-ubuntu-14-dot-04/"/>
+    <updated>2014-06-07T19:13:00+04:00</updated>
+    <id>http://erthad.name/blog/2014/06/07/ustanovka-samsung-ml-2010-na-ubuntu-14-dot-04</id>
+    <content type="html"><![CDATA[<p>Обновление Ubuntu до версии 14.04 прошло на удивление без косяков &mdash; ничего из основных устройств и приложений
+не отвалилось. Мелкие косяки все же есть &mdash; отвалился принтер Samsung ML-2010 и поддержка китайского языка
+в Chrome.</p>
+
+<p>Принтер системой определялся, но не печатал.
+Наконец-то нашел пару часов и установил драйвера для принтера. Делается это примерно так:</p>
+
+<p>Качаем и распаковываем универсальный драйвер принтера:
+<a href="http://downloadcenter.samsung.com/content/DR/200902/20090225163328453/UnifiedLinuxDriver.tar.gz">http://downloadcenter.samsung.com/content/DR/200902/20090225163328453/UnifiedLinuxDriver.tar.gz</a></p>
+
+<p>С использованием скриптов установки у меня завести принтер не получилось, поэтому делаем все вручную.</p>
+
+<p>Берем нужный PPD из <code>cdroot/Linux/noarch/at_opt/share/ppd</code> и подсовываем его принтеру, который у нас Ubuntu нашла сама.
+Он требует фильтр <code>/usr/lib/cups/filter/rastertosamsungspl</code>. Кладем его из этого же архива к себе в систему.</p>
+
+<p>Чтобы не искать их потом еще раз, я положил их <a href="http://erthad.name/files">сюда</a>.</p>
 ]]></content>
   </entry>
   
@@ -1027,48 +1051,6 @@ LinkedIn не дает напрямую написать человеку не �
 
 
 <p>В результате получим довольно аккуратный скрипт, который легко читать и отлаживать.</p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[Сокращение параметров командной строки]]></title>
-    <link href="http://erthad.name/blog/2013/08/20/sokrashchieniie-paramietrov/"/>
-    <updated>2013-08-20T11:46:00+04:00</updated>
-    <id>http://erthad.name/blog/2013/08/20/sokrashchieniie-paramietrov</id>
-    <content type="html"><![CDATA[<p>Бывает, при использовании какой-либо команды постоянно нужно бывает передавать ей длинные параметры.</p>
-
-<p>Например:</p>
-
-<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-</pre></td><td class='code'><pre><code class='bash'><span class='line'>aws din --region<span class="o">=</span>eu
-</span><span class='line'>aws din --region<span class="o">=</span>ap
-</span><span class='line'>aws start i-39b17e77 --region<span class="o">=</span>us
-</span></code></pre></td></tr></table></div></figure>
-
-
-<p>Можно создать алиасы, но это не всегда бывает применимо &mdash; например, в случае когда команда не принимает параметры
-до операции, алиас создать не так просто.</p>
-
-<p>Выход такой: свернем параметр до переменной:</p>
-
-<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-<span class='line-number'>7</span>
-</pre></td><td class='code'><pre><code class='bash'><span class='line'><span class="nb">export </span><span class="nv">EU</span><span class="o">=</span><span class="s2">&quot;--region=eu&quot;</span>
-</span><span class='line'><span class="nb">export </span><span class="nv">AP</span><span class="o">=</span><span class="s2">&quot;--region=ap&quot;</span>
-</span><span class='line'><span class="nb">export </span><span class="nv">US</span><span class="o">=</span><span class="s2">&quot;--region=us&quot;</span>
-</span><span class='line'>
-</span><span class='line'>aws din <span class="nv">$EU</span>
-</span><span class='line'>aws din <span class="nv">$AP</span>
-</span><span class='line'>aws start i-39b17e77 <span class="nv">$US</span>
-</span></code></pre></td></tr></table></div></figure>
-
 ]]></content>
   </entry>
   
