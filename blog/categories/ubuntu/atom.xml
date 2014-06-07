@@ -4,7 +4,7 @@
   <title><![CDATA[Category: ubuntu | Erthad's blog]]></title>
   <link href="http://erthad.name/blog/categories/ubuntu/atom.xml" rel="self"/>
   <link href="http://erthad.name/"/>
-  <updated>2014-06-07T19:36:31+04:00</updated>
+  <updated>2014-06-07T19:37:49+04:00</updated>
   <id>http://erthad.name/</id>
   <author>
     <name><![CDATA[Timur Batyrshin]]></name>
@@ -34,8 +34,8 @@
 Он требует фильтр <code>/usr/lib/cups/filter/rastertosamsungspl</code>. Кладем его из этого же архива к себе в систему.</p>
 
 <p>Чтобы не искать их потом еще раз, я положил их сюда:
- * <a href="files/ML-2010spl2.ppd">ML-2010spl2.ppd</a>
- * <a href="files/rastertosamsungspl">rastertosamsungspl</a></p>
+ * <a href="/files/ML-2010spl2.ppd">ML-2010spl2.ppd</a>
+ * <a href="/files/rastertosamsungspl">rastertosamsungspl</a></p>
 ]]></content>
   </entry>
   
