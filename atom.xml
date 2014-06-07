@@ -4,7 +4,7 @@
   <title><![CDATA[Erthad's blog]]></title>
   <link href="http://erthad.name/atom.xml" rel="self"/>
   <link href="http://erthad.name/"/>
-  <updated>2014-06-07T19:38:50+04:00</updated>
+  <updated>2014-06-07T19:59:05+04:00</updated>
   <id>http://erthad.name/</id>
   <author>
     <name><![CDATA[Timur Batyrshin]]></name>
@@ -28,7 +28,21 @@
 
 <p>Примерный список моих нынешних профессиональных знаний и умений можно посмотреть в <a href="http://www.linkedin.com/pub/timur-batyrshin/28/a52/2a2">профиле LinkedIn</a>.</p>
 
-<p>Связаться со мной можно написав письмо там же, либо написав на <a href="mailto:erthad@gmail.com"><a href="&#109;&#97;&#105;&#108;&#116;&#111;&#x3a;&#101;&#x72;&#x74;&#x68;&#x61;&#x64;&#x40;&#103;&#x6d;&#97;&#x69;&#x6c;&#46;&#99;&#x6f;&#109;">&#101;&#114;&#x74;&#x68;&#97;&#100;&#64;&#103;&#x6d;&#x61;&#105;&#x6c;&#x2e;&#99;&#111;&#x6d;</a></a>.</p>
+<p>Связаться со мной можно написав письмо там же, либо написав на <a href="mailto:erthad@gmail.com"><a href="&#109;&#97;&#x69;&#x6c;&#116;&#x6f;&#58;&#x65;&#114;&#116;&#x68;&#x61;&#x64;&#64;&#103;&#109;&#x61;&#105;&#x6c;&#46;&#x63;&#111;&#109;">&#x65;&#114;&#x74;&#104;&#97;&#x64;&#64;&#x67;&#x6d;&#97;&#105;&#108;&#x2e;&#99;&#111;&#109;</a></a>.</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Китайский в Chrome]]></title>
+    <link href="http://erthad.name/blog/2014/06/07/kitaiskii-v-chrome/"/>
+    <updated>2014-06-07T19:55:00+04:00</updated>
+    <id>http://erthad.name/blog/2014/06/07/kitaiskii-v-chrome</id>
+    <content type="html"><![CDATA[<p>Как я уже <a href="../ustanovka-samsung-ml-2010-na-ubuntu-14-dot-04/">писал</a>, после обновления Ubuntu до версии 14.04
+в Google Chrome поломалось отображение китайского языка, причем, только в Chrome/Chromium &mdash; в Mozilla Firefox,
+как и в других местах системы, все отображалось нормально.</p>
+
+<p>Как выяснилось, видимо, где-то поменялся шрифт по-умолчанию для отображения иероглифов.
+Установка всех имеющихся в репозитории китайских шрифтов исправила дело.</p>
 ]]></content>
   </entry>
   
@@ -911,152 +925,6 @@ LinkedIn не дает напрямую написать человеку не �
 <p>Сколько стоит органайзер + информеры? Вряд ли дороже 5тыр, даже вряд ли дороже 3тыр.</p>
 
 <p>Вывод: смартфон для меня все еще не нужен</p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[Разворачивание скриптов]]></title>
-    <link href="http://erthad.name/blog/2013/08/22/razvorachivaniie-skriptov/"/>
-    <updated>2013-08-22T08:45:00+04:00</updated>
-    <id>http://erthad.name/blog/2013/08/22/razvorachivaniie-skriptov</id>
-    <content type="html"><![CDATA[<p>Часто бывает нужно развернуть на удаленный хост (управляемый при помощи chef) какие-то скрипты.
-Это не проблема, но не менее часто в этих скриптах бывают нужны привязки конкретно к этому хосту.
-Можно, конечно, реализовать обработку параметров командной строки или загрузку данных из конфига,
-но первое добавляет кучу кода в скрипт и часто неудобно само по себе (нам нужно будет передать при
-каждом запуске скрипта, скажем, с пяток некоротких параметров, причем каждый раз одинаковых), а
-загрузка данных из конфига неудобна тем, что приходится обрабатывать случаи, когда конфиг не найден,
-какие-то параметры не задали и т.д., что тоже не всегда оправдано.</p>
-
-<!-- more -->
-
-
-<p>К примеру, допустим, шеф у нас кладет на хост такой скрипт:</p>
-
-<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-<span class='line-number'>7</span>
-<span class='line-number'>8</span>
-<span class='line-number'>9</span>
-<span class='line-number'>10</span>
-<span class='line-number'>11</span>
-<span class='line-number'>12</span>
-<span class='line-number'>13</span>
-</pre></td><td class='code'><pre><code class='bash'><span class='line'><span class="c">#!/bin/sh</span>
-</span><span class='line'>
-</span><span class='line'>usage<span class="o">(){</span>
-</span><span class='line'> <span class="nb">echo</span> <span class="s2">&quot;Usage: $(basename &quot;</span><span class="nv">$0</span><span class="s2">&quot;) SITE&quot;</span>
-</span><span class='line'> <span class="nb">exit </span>1
-</span><span class='line'><span class="o">}</span>
-</span><span class='line'>
-</span><span class='line'><span class="nv">SITE</span><span class="o">=</span><span class="s2">&quot;$1&quot;</span>
-</span><span class='line'>
-</span><span class='line'><span class="o">[</span> -z <span class="s2">&quot;${SITE}&quot;</span> <span class="o">]</span> <span class="o">&amp;&amp;</span> usage
-</span><span class='line'>
-</span><span class='line'>mkdir <span class="s2">&quot;/var/www/${SITE}&quot;</span>
-</span><span class='line'>cat /etc/sitecfg/site.template | sed <span class="s2">&quot;s,@NAME@,${SITE},g&quot;</span> &gt; <span class="s2">&quot;/etc/nginx/sites-available/${SITE}&quot;</span>
-</span></code></pre></td></tr></table></div></figure>
-
-
-<p>В этом скрипте хочется выделить в отдельные переменные несколько частей:</p>
-
-<ul>
-<li>путь к каталогам с сайтами (<code>/var/www</code>)</li>
-<li>имя темплейта (<code>/etc/sitecfg/site.template</code>)</li>
-<li>путь, куда мы кладем обработанный темплейт (<code>/etc/nginx/sites-available</code>)</li>
-<li>возможно, еще строку замены (<code>s,@NAME@,${SITE},g</code>)</li>
-</ul>
-
-
-<p>Ясно, что все эти переменные передавать через командную строку не будешь, как не будешь и создавать отдельный
-конфиг для их хранения. При этом, для них лучше задать именно переменные, т.к., например, мы можем решить хранить
-сайты не в <code>/var/www</code>, а в <code>/var/www/sites</code>, назвать темплейт более внятным именем и положить в более правильное место
-и т.д.</p>
-
-<p>Чтобы решить эту задачу, мы пишем скрипт как обычно, но в виде ERB-шаблона. Все нужные нам параметры
-придут от Chef-а. Первое желание написать его так:</p>
-
-<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-<span class='line-number'>7</span>
-<span class='line-number'>8</span>
-<span class='line-number'>9</span>
-<span class='line-number'>10</span>
-<span class='line-number'>11</span>
-<span class='line-number'>12</span>
-<span class='line-number'>13</span>
-</pre></td><td class='code'><pre><code class='erb'><span class='line'><span class="x">#!/bin/sh</span>
-</span><span class='line'>
-</span><span class='line'><span class="x">usage(){</span>
-</span><span class='line'><span class="x"> echo &quot;Usage: $(basename &quot;$0&quot;) SITE&quot;</span>
-</span><span class='line'><span class="x"> exit 1</span>
-</span><span class='line'><span class="x">}</span>
-</span><span class='line'>
-</span><span class='line'><span class="x">SITE=&quot;$1&quot;</span>
-</span><span class='line'>
-</span><span class='line'><span class="x">[ -z &quot;${SITE}&quot; ] &amp;&amp; usage</span>
-</span><span class='line'>
-</span><span class='line'><span class="x">mkdir &quot;</span><span class="cp">&lt;%=</span> <span class="vi">@sites_path</span> <span class="cp">%&gt;</span><span class="x">/${SITE}&quot;</span>
-</span><span class='line'><span class="x">cat &quot;</span><span class="cp">&lt;%=</span> <span class="vi">@site_template</span> <span class="cp">%&gt;</span><span class="x">&quot; | sed &quot;</span><span class="cp">&lt;%=</span> <span class="vi">@subst_string</span> <span class="cp">%&gt;</span><span class="x"> &gt; &quot;</span><span class="cp">&lt;%=</span> <span class="vi">@site_cfg_path</span> <span class="cp">%&gt;</span><span class="x">/${SITE}&quot;</span>
-</span></code></pre></td></tr></table></div></figure>
-
-
-<p>Казалось бы, все нормально, однако легко заметить, что такие конструкции как минимум, нелегко читать, а значит легко допустить
-опечатку. Попробуйте найти, в каком месте я здесь забыл кавычку.</p>
-
-<p>Перепишем таким образом:</p>
-
-<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-<span class='line-number'>7</span>
-<span class='line-number'>8</span>
-<span class='line-number'>9</span>
-<span class='line-number'>10</span>
-<span class='line-number'>11</span>
-<span class='line-number'>12</span>
-<span class='line-number'>13</span>
-<span class='line-number'>14</span>
-<span class='line-number'>15</span>
-<span class='line-number'>16</span>
-<span class='line-number'>17</span>
-<span class='line-number'>18</span>
-<span class='line-number'>19</span>
-<span class='line-number'>20</span>
-</pre></td><td class='code'><pre><code class='erb'><span class='line'><span class="x">#!/bin/sh</span>
-</span><span class='line'>
-</span><span class='line'><span class="x"># Generated by Chef for </span><span class="cp">&lt;%=</span> <span class="n">node</span><span class="o">[</span><span class="s1">&#39;fqdn&#39;</span><span class="o">]</span> <span class="cp">%&gt;</span><span class="x"></span>
-</span><span class='line'>
-</span><span class='line'><span class="x">SITES_PATH=&quot;</span><span class="cp">&lt;%=</span> <span class="vi">@sites_path</span> <span class="cp">%&gt;</span><span class="x">&quot;</span>
-</span><span class='line'><span class="x">SITE_TEMPLATE=&quot;</span><span class="cp">&lt;%=</span> <span class="vi">@site_template</span> <span class="cp">%&gt;</span><span class="x">&quot;</span>
-</span><span class='line'><span class="x">SUBST_STRING=&quot;</span><span class="cp">&lt;%=</span> <span class="vi">@subst_string</span> <span class="cp">%&gt;</span><span class="x">&quot; </span>
-</span><span class='line'><span class="x">SITE_CFG_PATH=&quot;</span><span class="cp">&lt;%=</span> <span class="vi">@site_cfg_path</span> <span class="cp">%&gt;</span><span class="x">&quot;</span>
-</span><span class='line'>
-</span><span class='line'><span class="x">usage(){</span>
-</span><span class='line'><span class="x"> echo &quot;Usage: $(basename &quot;$0&quot;) SITE&quot;</span>
-</span><span class='line'><span class="x"> exit 1</span>
-</span><span class='line'><span class="x">}</span>
-</span><span class='line'>
-</span><span class='line'><span class="x">SITE=&quot;$1&quot;</span>
-</span><span class='line'>
-</span><span class='line'><span class="x">[ -z &quot;${SITE}&quot; ] &amp;&amp; usage</span>
-</span><span class='line'>
-</span><span class='line'><span class="x">mkdir &quot;${SITES_PATH}/${SITE}&quot;</span>
-</span><span class='line'><span class="x">cat &quot;${SITE_TEMPLATE}&quot; | sed &quot;${SUBST_STRING}&quot; &gt; &quot;${SITE_CFG_PATH}/${SITE}&quot;</span>
-</span></code></pre></td></tr></table></div></figure>
-
-
-<p>В результате получим довольно аккуратный скрипт, который легко читать и отлаживать.</p>
 ]]></content>
   </entry>
   

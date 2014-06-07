@@ -7,11 +7,8 @@
 	<meta name="author" content="Timur Batyrshin">
 
 	
-	<meta name="description" content="Бывает, при использовании какой-либо команды постоянно нужно бывает передавать ей длинные параметры. Например: 1
-2
-3
-aws din --region=eu
-aws din -- &hellip;">
+	<meta name="description" content="Часто бывает нужно развернуть на удаленный хост (управляемый при помощи chef) какие-то скрипты.
+Это не проблема, но не менее часто в этих скриптах &hellip;">
 	
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
@@ -80,6 +77,56 @@ aws din -- &hellip;">
 		
 	
 	<div id="content" class="inner">
+
+
+    <article class="post">
+	<h2 class="title">
+		
+		<a href="/blog/2013/08/22/razvorachivaniie-skriptov/">
+		
+			Разворачивание скриптов</a>
+	</h2>
+	<div class="entry-content">
+		<p>Часто бывает нужно развернуть на удаленный хост (управляемый при помощи chef) какие-то скрипты.
+Это не проблема, но не менее часто в этих скриптах бывают нужны привязки конкретно к этому хосту.
+Можно, конечно, реализовать обработку параметров командной строки или загрузку данных из конфига,
+но первое добавляет кучу кода в скрипт и часто неудобно само по себе (нам нужно будет передать при
+каждом запуске скрипта, скажем, с пяток некоротких параметров, причем каждый раз одинаковых), а
+загрузка данных из конфига неудобна тем, что приходится обрабатывать случаи, когда конфиг не найден,
+какие-то параметры не задали и т.д., что тоже не всегда оправдано.</p>
+
+
+		
+		<a href="/blog/2013/08/22/razvorachivaniie-skriptov/" class="more-link">Read on &rarr;</a>
+	</div>
+
+
+<div class="meta">
+	<div class="date">
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2013-08-22T08:45:00+04:00" pubdate data-updated="true">Aug 22<span>nd</span>, 2013</time></div>
+	<div class="tags">
+
+
+	<a class='category' href='/blog/categories/chef/'>chef</a>, <a class='category' href='/blog/categories/configuration-management/'>configuration management</a>, <a class='category' href='/blog/categories/shell/'>shell</a>
+
+
+</div>
+	
+	<div class="comments"><a href="/blog/2013/08/22/razvorachivaniie-skriptov/#disqus_thread">Comments</a></div>
+	
+</div>
+</article>
 
 
     <article class="post">

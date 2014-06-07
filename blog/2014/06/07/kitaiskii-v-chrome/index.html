@@ -3,12 +3,12 @@
 <html>
 <head>
 	<meta charset="utf-8">
-	<title>Установка Samsung ML-2010 на Ubuntu 14.04 - Erthad's blog</title>
+	<title>Китайский в Chrome - Erthad's blog</title>
 	<meta name="author" content="Timur Batyrshin">
 
 	
-	<meta name="description" content="Обновление Ubuntu до версии 14.04 прошло на удивление без косяков &mdash; ничего из основных устройств и приложений
-не отвалилось. Мелкие косяки все &hellip;">
+	<meta name="description" content="Как я уже писал, после обновления Ubuntu до версии 14.04
+в Google Chrome поломалось отображение китайского языка, причем, только в Chrome/Chromium & &hellip;">
 	
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
@@ -77,29 +77,13 @@
 		
 	
 	<div id="content" class="inner"><article class="post">
-	<h2 class="title">Установка Samsung ML-2010 на Ubuntu 14.04</h2>
-	<div class="entry-content"><p>Обновление Ubuntu до версии 14.04 прошло на удивление без косяков &mdash; ничего из основных устройств и приложений
-не отвалилось. Мелкие косяки все же есть &mdash; отвалился принтер Samsung ML-2010 и поддержка китайского языка
-в Chrome.</p>
+	<h2 class="title">Китайский в Chrome</h2>
+	<div class="entry-content"><p>Как я уже <a href="../ustanovka-samsung-ml-2010-na-ubuntu-14-dot-04/">писал</a>, после обновления Ubuntu до версии 14.04
+в Google Chrome поломалось отображение китайского языка, причем, только в Chrome/Chromium &mdash; в Mozilla Firefox,
+как и в других местах системы, все отображалось нормально.</p>
 
-<p>Принтер системой определялся, но не печатал.
-Наконец-то нашел пару часов и установил драйвера для принтера. Делается это примерно так:</p>
-
-<p>Качаем и распаковываем универсальный драйвер принтера:
-<a href="http://downloadcenter.samsung.com/content/DR/200902/20090225163328453/UnifiedLinuxDriver.tar.gz">http://downloadcenter.samsung.com/content/DR/200902/20090225163328453/UnifiedLinuxDriver.tar.gz</a></p>
-
-<p>С использованием скриптов установки у меня завести принтер не получилось, поэтому делаем все вручную.</p>
-
-<p>Берем нужный PPD из <code>cdroot/Linux/noarch/at_opt/share/ppd</code> и подсовываем его принтеру, который у нас Ubuntu нашла сама.
-Он требует фильтр <code>/usr/lib/cups/filter/rastertosamsungspl</code>. Кладем его из этого же архива к себе в систему.</p>
-
-<p>Чтобы не искать их потом еще раз, я положил их сюда:</p>
-
-<ul>
-<li><a href="/files/ML-2010spl2.ppd">ML-2010spl2.ppd</a></li>
-<li><a href="/files/rastertosamsungspl">rastertosamsungspl</a></li>
-</ul>
-
+<p>Как выяснилось, видимо, где-то поменялся шрифт по-умолчанию для отображения иероглифов.
+Установка всех имеющихся в репозитории китайских шрифтов исправила дело.</p>
 </div>
 
 
@@ -116,11 +100,11 @@
   
 
 
-<time datetime="2014-06-07T19:13:00+04:00" pubdate data-updated="true">Jun 7<span>th</span>, 2014</time></div>
+<time datetime="2014-06-07T19:55:00+04:00" pubdate data-updated="true">Jun 7<span>th</span>, 2014</time></div>
 	<div class="tags">
 
 
-	<a class='category' href='/blog/categories/14-dot-04/'>14.04</a>, <a class='category' href='/blog/categories/drivers/'>drivers</a>, <a class='category' href='/blog/categories/printer/'>printer</a>, <a class='category' href='/blog/categories/ubuntu/'>ubuntu</a>
+	<a class='category' href='/blog/categories/14-dot-04/'>14.04</a>, <a class='category' href='/blog/categories/chinese/'>chinese</a>, <a class='category' href='/blog/categories/chrome/'>chrome</a>, <a class='category' href='/blog/categories/chromium/'>chromium</a>, <a class='category' href='/blog/categories/ubuntu/'>ubuntu</a>
 
 
 </div>
@@ -179,8 +163,8 @@
       
         
         // var disqus_developer = 1;
-        var disqus_identifier = 'http://erthad.name/blog/2014/06/07/ustanovka-samsung-ml-2010-na-ubuntu-14-dot-04/';
-        var disqus_url = 'http://erthad.name/blog/2014/06/07/ustanovka-samsung-ml-2010-na-ubuntu-14-dot-04/';
+        var disqus_identifier = 'http://erthad.name/blog/2014/06/07/kitaiskii-v-chrome/';
+        var disqus_url = 'http://erthad.name/blog/2014/06/07/kitaiskii-v-chrome/';
         var disqus_script = 'embed.js';
       
     (function () {
