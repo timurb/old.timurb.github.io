@@ -4,7 +4,7 @@
   <title><![CDATA[Category: devops | Erthad's blog]]></title>
   <link href="http://erthad.name/blog/categories/devops/atom.xml" rel="self"/>
   <link href="http://erthad.name/"/>
-  <updated>2014-10-24T20:03:21+04:00</updated>
+  <updated>2014-10-24T20:04:06+04:00</updated>
   <id>http://erthad.name/</id>
   <author>
     <name><![CDATA[Timur Batyrshin]]></name>
@@ -46,7 +46,7 @@ end
 </ul>
 
 
-<p>Какой вариант лучше? Все хороши. Я уже давным давно пользуюсь вторым и чуть менее давно &mdash; третьим. Заводить функцию под первый
+<p>Какой же из способов лучше? Все хороши. Я уже давным давно пользуюсь вторым и чуть менее давно &mdash; третьим. Заводить функцию под первый
 вариант не нравится, т.к. придется всюду таскать ее или зависимость на кукбук, который ее определеяет.</p>
 
 <p>Еще есть хороший вариант, предлагаемый <a href="http://evilmartians.com/">Evil Martians</a> &mdash; заворачивать в LWRP все что можно, но с этим
