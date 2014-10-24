@@ -4,7 +4,7 @@
   <title><![CDATA[Category: chef | Erthad's blog]]></title>
   <link href="http://erthad.name/blog/categories/chef/atom.xml" rel="self"/>
   <link href="http://erthad.name/"/>
-  <updated>2014-10-24T20:01:25+04:00</updated>
+  <updated>2014-10-24T20:02:54+04:00</updated>
   <id>http://erthad.name/</id>
   <author>
     <name><![CDATA[Timur Batyrshin]]></name>
@@ -41,7 +41,7 @@ owner ((node.owner    rescue "root"))      # &lt;-- так правильно
 end   
 </code></p>
 
-<p>Второй вариант кажется нормальным, но он будет выполняться как <code>(some_other_parameter node.foobar) rescue "xi-xi"</code>, что
+<p>Второй вариант кажется нормальным, но он будет выполняться как <code>(mode node.mode) rescue "0644"</code>, что
 очевидно делает совсем не то, что нам надо &mdash; значение по-умолчанию не передается внутрь LWRP в случае exception, как мы здесь ожидаем.</p></li>
 </ul>
 
