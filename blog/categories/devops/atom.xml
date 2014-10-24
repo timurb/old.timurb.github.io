@@ -4,7 +4,7 @@
   <title><![CDATA[Category: devops | Erthad's blog]]></title>
   <link href="http://erthad.name/blog/categories/devops/atom.xml" rel="self"/>
   <link href="http://erthad.name/"/>
-  <updated>2014-10-24T20:19:50+04:00</updated>
+  <updated>2014-10-24T20:21:41+04:00</updated>
   <id>http://erthad.name/</id>
   <author>
     <name><![CDATA[Timur Batyrshin]]></name>
@@ -23,7 +23,7 @@
 
 <p>Это можно обойти несколькими способами:</p>
 
-<ul>
+<ol>
 <li>Конструкция вида <code>node.attribute?('foobar') ? node.foobar : 'some_default'</code> или она же завернутая в хелпер-функцию.
 Это по очевидным причинам довольно неудобно.</li>
 <li>Просто задаем умолчания (<code>nil</code>) в файле атрибутов для всех атрибутов, которые мы используем за исключением тех, на которых нам обязательно
@@ -44,17 +44,13 @@
 </span><span class='line'><span class="n">mode</span>    <span class="n">node</span><span class="o">.</span><span class="n">mode</span>     <span class="k">rescue</span> <span class="o">&amp;</span><span class="n">ldquo</span><span class="p">;</span><span class="mo">0644</span><span class="o">&amp;</span><span class="n">rdquo</span><span class="p">;</span>            <span class="c1"># так сработает неправильно (см. ниже)</span>
 </span><span class='line'><span class="n">owner</span> <span class="p">((</span><span class="n">node</span><span class="o">.</span><span class="n">owner</span>    <span class="k">rescue</span> <span class="o">&amp;</span><span class="n">ldquo</span><span class="p">;</span><span class="n">root</span><span class="o">&amp;</span><span class="n">rdquo</span><span class="p">;))</span>      <span class="c1"># &amp;lt;&amp;mdash; так правильно</span>
 </span><span class='line'><span class="k">end</span> <span class="o">&lt;</span><span class="n">br</span><span class="o">/&gt;</span>
-</span></code></pre></td></tr></table></div></figure></notextile></div></p>
-
-<ul>
+</span></code></pre></td></tr></table></div></figure></notextile></div></p></li>
 <li><ul>
 <li>Второй вариант этого кода кажется нормальным, но он будет выполняться как <code>(mode node.mode) rescue "0644"</code>, что
 очевидно делает совсем не то, что нам надо &mdash; значение по-умолчанию не передается внутрь ресурса в случае exception, как мы здесь ожидаем.</li>
 </ul>
 </li>
-</ul>
-</li>
-</ul>
+</ol>
 
 
 <p>Какой же из способов лучше? Все хороши. Я уже давным давно пользуюсь вторым и чуть менее давно &mdash; третьим. Заводить функцию под первый
