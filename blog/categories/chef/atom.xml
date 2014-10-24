@@ -4,7 +4,7 @@
   <title><![CDATA[Category: chef | Erthad's blog]]></title>
   <link href="http://erthad.name/blog/categories/chef/atom.xml" rel="self"/>
   <link href="http://erthad.name/"/>
-  <updated>2014-10-24T20:04:06+04:00</updated>
+  <updated>2014-10-24T20:19:50+04:00</updated>
   <id>http://erthad.name/</id>
   <author>
     <name><![CDATA[Timur Batyrshin]]></name>
@@ -33,16 +33,27 @@
 заводить какие-то умолчания для нод или окружений.</li>
 <li><p>Для всех таких случаев используем конструкцию <code>(( node.foobar rescue 'some_default' ))</code>. Именно так, с двойными скобками,
 иначе мы не сможем ее передавать параметром внутри определения ресурса.
-<code>ruby Пример
-template "/tmp/myfile" do
-source (node.template rescue "template.erb")   # так не пропустит синтаксис ruby
-mode    node.mode     rescue "0644"            # так сработает неправильно (см. ниже)
-owner ((node.owner    rescue "root"))      # &lt;-- так правильно
-end   
-</code></p>
+<div class='bogus-wrapper'><notextile><figure class='code'><figcaption><span>Пример </span></figcaption>
+ <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+</pre></td><td class='code'><pre><code class='ruby'><span class='line'><span class="n">template</span> <span class="o">&amp;</span><span class="n">ldquo</span><span class="p">;</span><span class="o">/</span><span class="n">tmp</span><span class="o">/</span><span class="n">myfile</span><span class="o">&amp;</span><span class="n">rdquo</span><span class="p">;</span> <span class="k">do</span>
+</span><span class='line'><span class="n">source</span> <span class="p">(</span><span class="n">node</span><span class="o">.</span><span class="n">template</span> <span class="k">rescue</span> <span class="o">&amp;</span><span class="n">ldquo</span><span class="p">;</span><span class="n">template</span><span class="o">.</span><span class="n">erb</span><span class="o">&amp;</span><span class="n">rdquo</span><span class="p">;)</span>   <span class="c1"># так не пропустит синтаксис ruby</span>
+</span><span class='line'><span class="n">mode</span>    <span class="n">node</span><span class="o">.</span><span class="n">mode</span>     <span class="k">rescue</span> <span class="o">&amp;</span><span class="n">ldquo</span><span class="p">;</span><span class="mo">0644</span><span class="o">&amp;</span><span class="n">rdquo</span><span class="p">;</span>            <span class="c1"># так сработает неправильно (см. ниже)</span>
+</span><span class='line'><span class="n">owner</span> <span class="p">((</span><span class="n">node</span><span class="o">.</span><span class="n">owner</span>    <span class="k">rescue</span> <span class="o">&amp;</span><span class="n">ldquo</span><span class="p">;</span><span class="n">root</span><span class="o">&amp;</span><span class="n">rdquo</span><span class="p">;))</span>      <span class="c1"># &amp;lt;&amp;mdash; так правильно</span>
+</span><span class='line'><span class="k">end</span> <span class="o">&lt;</span><span class="n">br</span><span class="o">/&gt;</span>
+</span></code></pre></td></tr></table></div></figure></notextile></div></p>
 
-<p>Второй вариант кажется нормальным, но он будет выполняться как <code>(mode node.mode) rescue "0644"</code>, что
-очевидно делает совсем не то, что нам надо &mdash; значение по-умолчанию не передается внутрь ресурса в случае exception, как мы здесь ожидаем.</p></li>
+<ul>
+<li><ul>
+<li>Второй вариант этого кода кажется нормальным, но он будет выполняться как <code>(mode node.mode) rescue "0644"</code>, что
+очевидно делает совсем не то, что нам надо &mdash; значение по-умолчанию не передается внутрь ресурса в случае exception, как мы здесь ожидаем.</li>
+</ul>
+</li>
+</ul>
+</li>
 </ul>
 
 
