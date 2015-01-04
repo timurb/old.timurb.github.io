@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: tests, | Erthad's blog]]></title>
+  <link href="http://erthad.name/blog/categories/tests/atom.xml" rel="self"/>
+  <link href="http://erthad.name/"/>
+  <updated>2015-01-04T18:33:58+03:00</updated>
+  <id>http://erthad.name/</id>
+  <author>
+    <name><![CDATA[Timur Batyrshin]]></name>
+    <email><![CDATA[erthad@gmail.com]]></email>
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[TDD and diffuse mode]]></title>
+    <link href="http://erthad.name/blog/2015/01/04/tdd-and-diffuse-mode/"/>
+    <updated>2015-01-04T18:16:00+03:00</updated>
+    <id>http://erthad.name/blog/2015/01/04/tdd-and-diffuse-mode</id>
+    <content type="html"><![CDATA[<p>Сейчас смотрел видеоматериалы <a href="https://www.coursera.org/course/learning">курса об обучении</a> с Coursera.</p>
+
+<p>В первом модуле там говорится о существовании двух режимов мозга: focused mode и diffuse mode. Focused mode &mdash; режим в котором мы концентрируемся на какой-то задаче не отвлекаясь на посторонние раздражители. В diffuse mode мы, напротив, ни на чем не концентрируемся, расслабляя ум, и в этом режиме происходит другой характер работы над предметом.</p>
+
+<p>В видеоролике, который я сегодня посмотрел, <a href="https://twitter.com/barbaraoakley">Барбара</a> брала интервью у редактора журнала и известной (в Америке) писательницы по совместительству. Очень интересный момент, который я услышал &mdash; в режиме &ldquo;focused mode&rdquo; она редактирует тексты, а в режиме &ldquo;diffuse mode&rdquo; &mdash; пишет. Попытки заниматься деятельностью, не подходящей к режиму ни к чему хорошему не приводило &mdash; в focused mode она писала с очень большим трудом, а в diffuse mode очевидно ты пропустишь кучу стилистических, орфографических и прочих ошибок.</p>
+
+<p>К чему я все это? Похожую аналогию можно провести с программированием. Нам нужно быстрая генерация идей, при этом для нас важно, чтобы они оказались рабочими &mdash; мы не можем сначала написать десять страниц кода, а потом проверить насколько они рабочие. В этом нам помогают наши любимые unit-тесты. Они работают быстро, их можно запускать часто, даже постоянно (есть даже, например, <a href="http://guardgem.org/">программа под названием guard</a> для этого). Это позволяет нам творить не задумываясь над деталями реализации, и оно еще при этом будет работать. После того как наколбасили класс-другой можно посмотреть порефакторить, если кажется, что это нужно, либо закоммитить как есть. Более всего, наверное, это подходит к ruby, который идеально подходит для режима &ldquo;пиши что думаешь&rdquo;.</p>
+
+<p>Как считаете, наблюдается ли такое?</p>
+]]></content>
+  </entry>
+  
+</feed>

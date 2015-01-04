@@ -7,7 +7,8 @@
 	<meta name="author" content="Timur Batyrshin">
 
 	
-	<meta name="description" content="Не так давно вышел очередной дистрибутив на базе Ubuntu, ElementaryOS. Решил его посмотреть. Первое впечатление &mdash; скопировали MacOS? Смотрим &hellip;">
+	<meta name="description" content="Как всем известно, чтобы установить лимиты ресурсов для сервиса, запускаемого через Upstart
+нужно править соответствующий скрипт запуска, а лимиты, &hellip;">
 	
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
@@ -76,6 +77,116 @@
 		
 	
 	<div id="content" class="inner">
+
+
+    <article class="post">
+	<h2 class="title">
+		
+		<a href="/blog/2013/10/12/upstart-limits/">
+		
+			Upstart Limits</a>
+	</h2>
+	<div class="entry-content">
+		<p>Как всем известно, чтобы установить лимиты ресурсов для сервиса, запускаемого через Upstart
+нужно править соответствующий скрипт запуска, а лимиты, установленные в <code>/etc/security/limits.conf</code>
+не действуют. Однако я не встречал в доках упоминание о том, что эти лимиты применяются только
+после остановки и последующего запуска сервиса, но не применяются при рестарте.</p>
+
+<p>Проиллюстрирую примером.</p>
+
+
+		
+		<a href="/blog/2013/10/12/upstart-limits/" class="more-link">Read on &rarr;</a>
+	</div>
+
+
+<div class="meta">
+	<div class="date">
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2013-10-12T12:06:00+04:00" pubdate data-updated="true">Oct 12<span>th</span>, 2013</time></div>
+	<div class="tags">
+
+
+	<a class='category' href='/blog/categories/upstart/'>upstart</a>
+
+
+</div>
+	
+	<div class="comments"><a href="/blog/2013/10/12/upstart-limits/#disqus_thread">Comments</a></div>
+	
+</div>
+</article>
+
+
+    <article class="post">
+	<h2 class="title">
+		
+		<a href="/blog/2013/09/16/ustalost%27-ghlaz/">
+		
+			Усталость глаз</a>
+	</h2>
+	<div class="entry-content">
+		<p>Последнее время как-то быстро стали уставать глаза от компьютера. Видимо световой день сократился, стал больше
+сидеть в плохо освещенной комнате и из-за высокого перепада яркости между экраном дисплея и окружающим фоном
+глаза нагружаются больше.</p>
+
+<p>Вспомнил, что читал недавно на хабре про какие-то супер-очки, которые защищают глаза от верхней части спектра видимого света
+(проще говоря, не пропускают голубой и синий цвета) и уже начал думать где бы такие поискать как вспомнил о
+программе, которую когда-то пробовал использовать: <a href="http://justgetflux.com/">Flux</a>
+В тот раз она мне в общем понравилась, но почему-то долго не прижилась.</p>
+
+<p>Еще до установки вспомнился и ее минус &mdash; тормозит. Недолгие поиски показали, что есть аналогичная программа
+(есть в убунту из коробки): <a href="http://jonls.dk/redshift/">Redshift</a>.
+Настраивать можно так же все что нужно параметры &mdash; температуру, широту и т.д.
+Пока поставил ее.</p>
+
+<p>Через 5 минут экран слился по яркости с окружающим фоном и глаза вроде как перестали уставать.
+Посмотрим, сколько эта штука проживет у меня.</p>
+
+<p>Возможно, в прошлый раз не прижилась, т.к. при ярком голубовато-белом офисном свете толку от нее не так много &mdash; нужен желтый свет
+ламп накаливания.</p>
+
+		
+		
+	</div>
+
+
+<div class="meta">
+	<div class="date">
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2013-09-16T19:34:00+04:00" pubdate data-updated="true">Sep 16<span>th</span>, 2013</time></div>
+	<div class="tags">
+
+
+	<a class='category' href='/blog/categories/utilities/'>utilities</a>, <a class='category' href='/blog/categories/ghlaza/'>глаза</a>
+
+
+</div>
+	
+	<div class="comments"><a href="/blog/2013/09/16/ustalost%27-ghlaz/#disqus_thread">Comments</a></div>
+	
+</div>
+</article>
 
 
     <article class="post">
@@ -402,7 +513,7 @@
     
     <div class="center"><a href="/blog/archives">Blog Archives</a></div>
 </nav></div>
-	<footer id="footer" class="inner">Copyright &copy; 2014
+	<footer id="footer" class="inner">Copyright &copy; 2015
 
     Timur Batyrshin
 
