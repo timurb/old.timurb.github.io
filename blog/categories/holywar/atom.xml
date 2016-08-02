@@ -2,10 +2,10 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
 
   <title><![CDATA[Category: holywar | Erthad's blog]]></title>
-  <link href="http://erthad.name/blog/categories/holywar/atom.xml" rel="self"/>
-  <link href="http://erthad.name/"/>
-  <updated>2015-01-04T18:50:46+03:00</updated>
-  <id>http://erthad.name/</id>
+  <link href="http://timurb.github.io/blog/categories/holywar/atom.xml" rel="self"/>
+  <link href="http://timurb.github.io/"/>
+  <updated>2016-08-02T12:45:10+03:00</updated>
+  <id>http://timurb.github.io/</id>
   <author>
     <name><![CDATA[Timur Batyrshin]]></name>
     <email><![CDATA[erthad@gmail.com]]></email>
@@ -15,9 +15,9 @@
   
   <entry>
     <title type="html"><![CDATA[RubyVsPython]]></title>
-    <link href="http://erthad.name/blog/2014/03/13/rubyvspython/"/>
+    <link href="http://timurb.github.io/blog/2014/03/13/rubyvspython/"/>
     <updated>2014-03-13T13:57:00+04:00</updated>
-    <id>http://erthad.name/blog/2014/03/13/rubyvspython</id>
+    <id>http://timurb.github.io/blog/2014/03/13/rubyvspython</id>
     <content type="html"><![CDATA[<p>Я уже где-то в твиттере писал свои впечатления от первого знакомства с python
 после ruby, сегодня пришла очередная волна впечатлений, запишу их здесь.</p>
 

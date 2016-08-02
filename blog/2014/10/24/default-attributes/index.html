@@ -43,7 +43,7 @@
 		<div class="container">
 			<form action="http://google.com/search" method="get">
 				<input type="text" name="q" results="0">
-				<input type="hidden" name="q" value="site:erthad.name">
+				<input type="hidden" name="q" value="site:timurb.github.io">
 			</form>
 		</div>
 	</div>
@@ -68,7 +68,7 @@
 	</div>
 	<form class="search" action="http://google.com/search" method="get">
 		<input class="alignright" type="text" name="q" results="0">
-		<input type="hidden" name="q" value="site:erthad.name">
+		<input type="hidden" name="q" value="site:timurb.github.io">
 	</form>
 </nav>
 
@@ -83,7 +83,7 @@
 
 <p>Это можно обойти несколькими способами:</p>
 
-<ol>
+<ul>
 <li>Конструкция вида <code>node.attribute?('foobar') ? node.foobar : 'some_default'</code> или она же завернутая в хелпер-функцию.
 Это по очевидным причинам довольно неудобно.</li>
 <li>Просто задаем умолчания (<code>nil</code>) в файле атрибутов для всех атрибутов, которые мы используем за исключением тех, на которых нам обязательно
@@ -93,11 +93,10 @@
 заводить какие-то умолчания для нод или окружений.</li>
 <li>Для всех таких случаев используем конструкцию <code>(( node.foobar rescue 'some_default' ))</code>. Именно так, с двойными скобками,
 иначе мы не сможем ее передавать параметром внутри определения ресурса.</li>
-</ol>
+</ul>
 
 
-<figure class='code'><figcaption><span>Пример </span></figcaption>
- <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<figure class='code'><figcaption><span>Пример</span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
 <span class='line-number'>2</span>
 <span class='line-number'>3</span>
 <span class='line-number'>4</span>
@@ -110,16 +109,10 @@
 </span></code></pre></td></tr></table></div></figure>
 
 
-<ul>
-<li><ul>
-<li>Вторая строчка в этом примере кажется нормальной, но она будет выполняться как <code>(mode node.mode) rescue "0644"</code>, что
-очевидно делает совсем не то, что нам надо &mdash; значение по-умолчанию не передается внутрь ресурса в случае exception, как мы здесь ожидаем.</li>
-</ul>
-</li>
-</ul>
+<p>  Второй вариант кажется нормальным, но он будет выполняться как <code>(some_other_parameter node.foobar) rescue "xi-xi"</code>, что
+  очевидно делает совсем не то, что нам надо &mdash; значение по-умолчанию не передается внутрь LWRP в случае exception, как мы здесь ожидаем.</p>
 
-
-<p>Какой же из способов лучше? Все хороши. Я уже давным давно пользуюсь вторым и чуть менее давно &mdash; третьим. Заводить функцию под первый
+<p>Какой вариант лучше? Все хороши. Я уже давным давно пользуюсь вторым и чуть менее давно &mdash; третьим. Заводить функцию под первый
 вариант не нравится, т.к. придется всюду таскать ее или зависимость на кукбук, который ее определеяет.</p>
 
 <p>Еще есть хороший вариант, предлагаемый <a href="http://evilmartians.com/">Evil Martians</a> &mdash; заворачивать в LWRP все что можно, но с этим
@@ -179,7 +172,7 @@
 </div>
 </section>
 </div>
-	<footer id="footer" class="inner">Copyright &copy; 2015
+	<footer id="footer" class="inner">Copyright &copy; 2016
 
     Timur Batyrshin
 
@@ -204,8 +197,8 @@
       
         
         // var disqus_developer = 1;
-        var disqus_identifier = 'http://erthad.name/blog/2014/10/24/default-attributes/';
-        var disqus_url = 'http://erthad.name/blog/2014/10/24/default-attributes/';
+        var disqus_identifier = 'http://timurb.github.io/blog/2014/10/24/default-attributes/';
+        var disqus_url = 'http://timurb.github.io/blog/2014/10/24/default-attributes/';
         var disqus_script = 'embed.js';
       
     (function () {

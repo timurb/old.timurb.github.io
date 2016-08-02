@@ -2,10 +2,10 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
 
   <title><![CDATA[Category: chef | Erthad's blog]]></title>
-  <link href="http://erthad.name/blog/categories/chef/atom.xml" rel="self"/>
-  <link href="http://erthad.name/"/>
-  <updated>2015-01-04T18:50:46+03:00</updated>
-  <id>http://erthad.name/</id>
+  <link href="http://timurb.github.io/blog/categories/chef/atom.xml" rel="self"/>
+  <link href="http://timurb.github.io/"/>
+  <updated>2016-08-02T12:45:10+03:00</updated>
+  <id>http://timurb.github.io/</id>
   <author>
     <name><![CDATA[Timur Batyrshin]]></name>
     <email><![CDATA[erthad@gmail.com]]></email>
@@ -15,15 +15,15 @@
   
   <entry>
     <title type="html"><![CDATA[Default attributes in chef]]></title>
-    <link href="http://erthad.name/blog/2014/10/24/default-attributes/"/>
+    <link href="http://timurb.github.io/blog/2014/10/24/default-attributes/"/>
     <updated>2014-10-24T19:19:00+04:00</updated>
-    <id>http://erthad.name/blog/2014/10/24/default-attributes</id>
+    <id>http://timurb.github.io/blog/2014/10/24/default-attributes</id>
     <content type="html"><![CDATA[<p>Как мы знаем, если мы в Chef используем какой-то произвольный атрибут <code>node.foobar</code>, и если у нас он в этот
 момент неопределен мы получаем exception.</p>
 
 <p>Это можно обойти несколькими способами:</p>
 
-<ol>
+<ul>
 <li>Конструкция вида <code>node.attribute?('foobar') ? node.foobar : 'some_default'</code> или она же завернутая в хелпер-функцию.
 Это по очевидным причинам довольно неудобно.</li>
 <li>Просто задаем умолчания (<code>nil</code>) в файле атрибутов для всех атрибутов, которые мы используем за исключением тех, на которых нам обязательно
@@ -33,27 +33,20 @@
 заводить какие-то умолчания для нод или окружений.</li>
 <li><p>Для всех таких случаев используем конструкцию <code>(( node.foobar rescue 'some_default' ))</code>. Именно так, с двойными скобками,
 иначе мы не сможем ее передавать параметром внутри определения ресурса.
-<div class='bogus-wrapper'><notextile><figure class='code'><figcaption><span>Пример </span></figcaption>
- <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-</pre></td><td class='code'><pre><code class='ruby'><span class='line'><span class="n">template</span> <span class="o">&amp;</span><span class="n">ldquo</span><span class="p">;</span><span class="o">/</span><span class="n">tmp</span><span class="o">/</span><span class="n">myfile</span><span class="o">&amp;</span><span class="n">rdquo</span><span class="p">;</span> <span class="k">do</span>
-</span><span class='line'><span class="n">source</span> <span class="p">(</span><span class="n">node</span><span class="o">.</span><span class="n">template</span> <span class="k">rescue</span> <span class="o">&amp;</span><span class="n">ldquo</span><span class="p">;</span><span class="n">template</span><span class="o">.</span><span class="n">erb</span><span class="o">&amp;</span><span class="n">rdquo</span><span class="p">;)</span>   <span class="c1"># так не пропустит синтаксис ruby</span>
-</span><span class='line'><span class="n">mode</span>    <span class="n">node</span><span class="o">.</span><span class="n">mode</span>     <span class="k">rescue</span> <span class="o">&amp;</span><span class="n">ldquo</span><span class="p">;</span><span class="mo">0644</span><span class="o">&amp;</span><span class="n">rdquo</span><span class="p">;</span>            <span class="c1"># так сработает неправильно (см. ниже)</span>
-</span><span class='line'><span class="n">owner</span> <span class="p">((</span><span class="n">node</span><span class="o">.</span><span class="n">owner</span>    <span class="k">rescue</span> <span class="o">&amp;</span><span class="n">ldquo</span><span class="p">;</span><span class="n">root</span><span class="o">&amp;</span><span class="n">rdquo</span><span class="p">;))</span>      <span class="c1"># &amp;lt;&amp;mdash; так правильно</span>
-</span><span class='line'><span class="k">end</span> <span class="o">&lt;</span><span class="n">br</span><span class="o">/&gt;</span>
-</span></code></pre></td></tr></table></div></figure></notextile></div></p></li>
-<li><ul>
-<li>Вторая строчка в этом примере кажется нормальной, но она будет выполняться как <code>(mode node.mode) rescue "0644"</code>, что
-очевидно делает совсем не то, что нам надо &mdash; значение по-умолчанию не передается внутрь ресурса в случае exception, как мы здесь ожидаем.</li>
+<code>ruby Пример
+template "/tmp/myfile" do
+source (node.template rescue "template.erb")   # так не пропустит синтаксис ruby
+mode    node.mode     rescue "0644"            # так сработает неправильно (см. ниже)
+owner ((node.owner    rescue "root"))      # &lt;-- так правильно
+end   
+</code></p>
+
+<p>Второй вариант кажется нормальным, но он будет выполняться как <code>(some_other_parameter node.foobar) rescue "xi-xi"</code>, что
+очевидно делает совсем не то, что нам надо &mdash; значение по-умолчанию не передается внутрь LWRP в случае exception, как мы здесь ожидаем.</p></li>
 </ul>
-</li>
-</ol>
 
 
-<p>Какой же из способов лучше? Все хороши. Я уже давным давно пользуюсь вторым и чуть менее давно &mdash; третьим. Заводить функцию под первый
+<p>Какой вариант лучше? Все хороши. Я уже давным давно пользуюсь вторым и чуть менее давно &mdash; третьим. Заводить функцию под первый
 вариант не нравится, т.к. придется всюду таскать ее или зависимость на кукбук, который ее определеяет.</p>
 
 <p>Еще есть хороший вариант, предлагаемый <a href="http://evilmartians.com/">Evil Martians</a> &mdash; заворачивать в LWRP все что можно, но с этим
@@ -64,9 +57,9 @@
   
   <entry>
     <title type="html"><![CDATA[Разворачивание скриптов]]></title>
-    <link href="http://erthad.name/blog/2013/08/22/razvorachivaniie-skriptov/"/>
+    <link href="http://timurb.github.io/blog/2013/08/22/razvorachivaniie-skriptov/"/>
     <updated>2013-08-22T08:45:00+04:00</updated>
-    <id>http://erthad.name/blog/2013/08/22/razvorachivaniie-skriptov</id>
+    <id>http://timurb.github.io/blog/2013/08/22/razvorachivaniie-skriptov</id>
     <content type="html"><![CDATA[<p>Часто бывает нужно развернуть на удаленный хост (управляемый при помощи chef) какие-то скрипты.
 Это не проблема, но не менее часто в этих скриптах бывают нужны привязки конкретно к этому хосту.
 Можно, конечно, реализовать обработку параметров командной строки или загрузку данных из конфига,

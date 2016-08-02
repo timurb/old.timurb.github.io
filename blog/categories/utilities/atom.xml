@@ -2,10 +2,10 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
 
   <title><![CDATA[Category: utilities | Erthad's blog]]></title>
-  <link href="http://erthad.name/blog/categories/utilities/atom.xml" rel="self"/>
-  <link href="http://erthad.name/"/>
-  <updated>2015-01-04T18:50:46+03:00</updated>
-  <id>http://erthad.name/</id>
+  <link href="http://timurb.github.io/blog/categories/utilities/atom.xml" rel="self"/>
+  <link href="http://timurb.github.io/"/>
+  <updated>2016-08-02T12:45:10+03:00</updated>
+  <id>http://timurb.github.io/</id>
   <author>
     <name><![CDATA[Timur Batyrshin]]></name>
     <email><![CDATA[erthad@gmail.com]]></email>
@@ -15,9 +15,9 @@
   
   <entry>
     <title type="html"><![CDATA[Redshift через месяц]]></title>
-    <link href="http://erthad.name/blog/2013/10/12/redshift-chieriez-miesiats/"/>
+    <link href="http://timurb.github.io/blog/2013/10/12/redshift-chieriez-miesiats/"/>
     <updated>2013-10-12T12:19:00+04:00</updated>
-    <id>http://erthad.name/blog/2013/10/12/redshift-chieriez-miesiats</id>
+    <id>http://timurb.github.io/blog/2013/10/12/redshift-chieriez-miesiats</id>
     <content type="html"><![CDATA[<p><a href="/blog/2013/09/16/ustalost%27-ghlaz/">Месяц назад</a> я поставил себе redshift, т.к. работать
 было невозможно &mdash; глаза болели.</p>
 
@@ -33,9 +33,9 @@
   
   <entry>
     <title type="html"><![CDATA[Усталость глаз]]></title>
-    <link href="http://erthad.name/blog/2013/09/16/ustalost%27-ghlaz/"/>
+    <link href="http://timurb.github.io/blog/2013/09/16/ustalost%27-ghlaz/"/>
     <updated>2013-09-16T19:34:00+04:00</updated>
-    <id>http://erthad.name/blog/2013/09/16/ustalost'-ghlaz</id>
+    <id>http://timurb.github.io/blog/2013/09/16/ustalost'-ghlaz</id>
     <content type="html"><![CDATA[<p>Последнее время как-то быстро стали уставать глаза от компьютера. Видимо световой день сократился, стал больше
 сидеть в плохо освещенной комнате и из-за высокого перепада яркости между экраном дисплея и окружающим фоном
 глаза нагружаются больше.</p>

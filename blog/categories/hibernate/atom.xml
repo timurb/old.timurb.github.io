@@ -2,10 +2,10 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
 
   <title><![CDATA[Category: hibernate | Erthad's blog]]></title>
-  <link href="http://erthad.name/blog/categories/hibernate/atom.xml" rel="self"/>
-  <link href="http://erthad.name/"/>
-  <updated>2015-01-04T18:50:46+03:00</updated>
-  <id>http://erthad.name/</id>
+  <link href="http://timurb.github.io/blog/categories/hibernate/atom.xml" rel="self"/>
+  <link href="http://timurb.github.io/"/>
+  <updated>2016-08-02T12:45:10+03:00</updated>
+  <id>http://timurb.github.io/</id>
   <author>
     <name><![CDATA[Timur Batyrshin]]></name>
     <email><![CDATA[erthad@gmail.com]]></email>
@@ -15,9 +15,9 @@
   
   <entry>
     <title type="html"><![CDATA[Suspend to disk]]></title>
-    <link href="http://erthad.name/blog/2014/01/04/suspend-to-disk/"/>
+    <link href="http://timurb.github.io/blog/2014/01/04/suspend-to-disk/"/>
     <updated>2014-01-04T13:21:00+04:00</updated>
-    <id>http://erthad.name/blog/2014/01/04/suspend-to-disk</id>
+    <id>http://timurb.github.io/blog/2014/01/04/suspend-to-disk</id>
     <content type="html"><![CDATA[<p>В убунту криво работает suspend to disk, настроить его можно несколькими способами:
 * стандартный ядерный &mdash; у меня толком не заработал
 * tuxonice &mdash; работает отлично, но только если не зависнет во время засыпания при освобождении памяти.

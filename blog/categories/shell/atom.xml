@@ -2,10 +2,10 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
 
   <title><![CDATA[Category: shell | Erthad's blog]]></title>
-  <link href="http://erthad.name/blog/categories/shell/atom.xml" rel="self"/>
-  <link href="http://erthad.name/"/>
-  <updated>2015-01-04T18:50:46+03:00</updated>
-  <id>http://erthad.name/</id>
+  <link href="http://timurb.github.io/blog/categories/shell/atom.xml" rel="self"/>
+  <link href="http://timurb.github.io/"/>
+  <updated>2016-08-02T12:45:10+03:00</updated>
+  <id>http://timurb.github.io/</id>
   <author>
     <name><![CDATA[Timur Batyrshin]]></name>
     <email><![CDATA[erthad@gmail.com]]></email>
@@ -15,9 +15,9 @@
   
   <entry>
     <title type="html"><![CDATA[Сортировка версий на шелле]]></title>
-    <link href="http://erthad.name/blog/2014/04/28/sortirovka-viersii-na-shiellie/"/>
+    <link href="http://timurb.github.io/blog/2014/04/28/sortirovka-viersii-na-shiellie/"/>
     <updated>2014-04-28T13:42:00+04:00</updated>
-    <id>http://erthad.name/blog/2014/04/28/sortirovka-viersii-na-shiellie</id>
+    <id>http://timurb.github.io/blog/2014/04/28/sortirovka-viersii-na-shiellie</id>
     <content type="html"><![CDATA[<p>Периодически сталкиваюсь с задачей: как сравнить две версии вида X1.Y1.Z1 на шелле.
 Очень часто это делают при помощи разнообразных врапперов.</p>
 
@@ -64,9 +64,9 @@ EOF</p>
   
   <entry>
     <title type="html"><![CDATA[Разворачивание скриптов]]></title>
-    <link href="http://erthad.name/blog/2013/08/22/razvorachivaniie-skriptov/"/>
+    <link href="http://timurb.github.io/blog/2013/08/22/razvorachivaniie-skriptov/"/>
     <updated>2013-08-22T08:45:00+04:00</updated>
-    <id>http://erthad.name/blog/2013/08/22/razvorachivaniie-skriptov</id>
+    <id>http://timurb.github.io/blog/2013/08/22/razvorachivaniie-skriptov</id>
     <content type="html"><![CDATA[<p>Часто бывает нужно развернуть на удаленный хост (управляемый при помощи chef) какие-то скрипты.
 Это не проблема, но не менее часто в этих скриптах бывают нужны привязки конкретно к этому хосту.
 Можно, конечно, реализовать обработку параметров командной строки или загрузку данных из конфига,
@@ -164,9 +164,9 @@ cat &ldquo;${SITE_TEMPLATE}&rdquo; | sed &ldquo;${SUBST_STRING}&rdquo; > &ldquo;
   
   <entry>
     <title type="html"><![CDATA[Сокращение параметров командной строки]]></title>
-    <link href="http://erthad.name/blog/2013/08/20/sokrashchieniie-paramietrov/"/>
+    <link href="http://timurb.github.io/blog/2013/08/20/sokrashchieniie-paramietrov/"/>
     <updated>2013-08-20T11:46:00+04:00</updated>
-    <id>http://erthad.name/blog/2013/08/20/sokrashchieniie-paramietrov</id>
+    <id>http://timurb.github.io/blog/2013/08/20/sokrashchieniie-paramietrov</id>
     <content type="html"><![CDATA[<p>Бывает, при использовании какой-либо команды постоянно нужно бывает передавать ей длинные параметры.</p>
 
 <p>Например:

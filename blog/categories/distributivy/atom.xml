@@ -2,10 +2,10 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
 
   <title><![CDATA[Category: дистрибутивы | Erthad's blog]]></title>
-  <link href="http://erthad.name/blog/categories/distributivy/atom.xml" rel="self"/>
-  <link href="http://erthad.name/"/>
-  <updated>2015-01-04T18:50:46+03:00</updated>
-  <id>http://erthad.name/</id>
+  <link href="http://timurb.github.io/blog/categories/distributivy/atom.xml" rel="self"/>
+  <link href="http://timurb.github.io/"/>
+  <updated>2016-08-02T12:45:10+03:00</updated>
+  <id>http://timurb.github.io/</id>
   <author>
     <name><![CDATA[Timur Batyrshin]]></name>
     <email><![CDATA[erthad@gmail.com]]></email>
@@ -15,9 +15,9 @@
   
   <entry>
     <title type="html"><![CDATA[elementary-os]]></title>
-    <link href="http://erthad.name/blog/2013/09/05/elementary-os/"/>
+    <link href="http://timurb.github.io/blog/2013/09/05/elementary-os/"/>
     <updated>2013-09-05T18:35:00+04:00</updated>
-    <id>http://erthad.name/blog/2013/09/05/elementary-os</id>
+    <id>http://timurb.github.io/blog/2013/09/05/elementary-os</id>
     <content type="html"><![CDATA[<p>Не так давно вышел очередной дистрибутив на базе Ubuntu, <a href="http://elementaryos.org">ElementaryOS</a>. Решил его посмотреть.</p>
 
 <p>Первое впечатление &mdash; скопировали MacOS?</p>

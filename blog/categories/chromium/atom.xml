@@ -2,10 +2,10 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
 
   <title><![CDATA[Category: chromium | Erthad's blog]]></title>
-  <link href="http://erthad.name/blog/categories/chromium/atom.xml" rel="self"/>
-  <link href="http://erthad.name/"/>
-  <updated>2015-01-04T18:50:46+03:00</updated>
-  <id>http://erthad.name/</id>
+  <link href="http://timurb.github.io/blog/categories/chromium/atom.xml" rel="self"/>
+  <link href="http://timurb.github.io/"/>
+  <updated>2016-08-02T12:45:10+03:00</updated>
+  <id>http://timurb.github.io/</id>
   <author>
     <name><![CDATA[Timur Batyrshin]]></name>
     <email><![CDATA[erthad@gmail.com]]></email>
@@ -15,9 +15,9 @@
   
   <entry>
     <title type="html"><![CDATA[Китайский в Chrome]]></title>
-    <link href="http://erthad.name/blog/2014/06/07/kitaiskii-v-chrome/"/>
+    <link href="http://timurb.github.io/blog/2014/06/07/kitaiskii-v-chrome/"/>
     <updated>2014-06-07T19:55:00+04:00</updated>
-    <id>http://erthad.name/blog/2014/06/07/kitaiskii-v-chrome</id>
+    <id>http://timurb.github.io/blog/2014/06/07/kitaiskii-v-chrome</id>
     <content type="html"><![CDATA[<p>Как я уже <a href="../ustanovka-samsung-ml-2010-na-ubuntu-14-dot-04/">писал</a>, после обновления Ubuntu до версии 14.04
 в Google Chrome поломалось отображение китайского языка, причем, только в Chrome/Chromium &mdash; в Mozilla Firefox,
 как и в других местах системы, все отображалось нормально.</p>

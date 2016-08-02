@@ -2,10 +2,10 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
 
   <title><![CDATA[Category: drivers | Erthad's blog]]></title>
-  <link href="http://erthad.name/blog/categories/drivers/atom.xml" rel="self"/>
-  <link href="http://erthad.name/"/>
-  <updated>2015-01-04T18:50:46+03:00</updated>
-  <id>http://erthad.name/</id>
+  <link href="http://timurb.github.io/blog/categories/drivers/atom.xml" rel="self"/>
+  <link href="http://timurb.github.io/"/>
+  <updated>2016-08-02T12:45:10+03:00</updated>
+  <id>http://timurb.github.io/</id>
   <author>
     <name><![CDATA[Timur Batyrshin]]></name>
     <email><![CDATA[erthad@gmail.com]]></email>
@@ -15,9 +15,9 @@
   
   <entry>
     <title type="html"><![CDATA[Установка Samsung ML-2010 на Ubuntu 14.04]]></title>
-    <link href="http://erthad.name/blog/2014/06/07/ustanovka-samsung-ml-2010-na-ubuntu-14-dot-04/"/>
+    <link href="http://timurb.github.io/blog/2014/06/07/ustanovka-samsung-ml-2010-na-ubuntu-14-dot-04/"/>
     <updated>2014-06-07T19:13:00+04:00</updated>
-    <id>http://erthad.name/blog/2014/06/07/ustanovka-samsung-ml-2010-na-ubuntu-14-dot-04</id>
+    <id>http://timurb.github.io/blog/2014/06/07/ustanovka-samsung-ml-2010-na-ubuntu-14-dot-04</id>
     <content type="html"><![CDATA[<p>Обновление Ubuntu до версии 14.04 прошло на удивление без косяков &mdash; ничего из основных устройств и приложений
 не отвалилось. Мелкие косяки все же есть &mdash; отвалился принтер Samsung ML-2010 и поддержка китайского языка
 в Chrome.</p>
@@ -45,9 +45,9 @@
   
   <entry>
     <title type="html"><![CDATA[Broadcom 4313 и Ubuntu 13.10]]></title>
-    <link href="http://erthad.name/blog/2014/04/07/broadcom-4313-i-ubuntu-13-dot-10/"/>
+    <link href="http://timurb.github.io/blog/2014/04/07/broadcom-4313-i-ubuntu-13-dot-10/"/>
     <updated>2014-04-07T17:10:00+04:00</updated>
-    <id>http://erthad.name/blog/2014/04/07/broadcom-4313-i-ubuntu-13-dot-10</id>
+    <id>http://timurb.github.io/blog/2014/04/07/broadcom-4313-i-ubuntu-13-dot-10</id>
     <content type="html"><![CDATA[<p>Прикупил я с год назад ноут <a href="http://market.yandex.ru/model-spec.xml?modelid=10451594&amp;hid=91013">Lenovo B590</a> и
 в целом все с ним нормально, за исключением проблем с Wi-Fi.</p>
 

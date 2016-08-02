@@ -2,10 +2,10 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
 
   <title><![CDATA[Category: размышления | Erthad's blog]]></title>
-  <link href="http://erthad.name/blog/categories/razmyshlieniia/atom.xml" rel="self"/>
-  <link href="http://erthad.name/"/>
-  <updated>2015-01-04T18:50:46+03:00</updated>
-  <id>http://erthad.name/</id>
+  <link href="http://timurb.github.io/blog/categories/razmyshlieniia/atom.xml" rel="self"/>
+  <link href="http://timurb.github.io/"/>
+  <updated>2016-08-02T12:45:10+03:00</updated>
+  <id>http://timurb.github.io/</id>
   <author>
     <name><![CDATA[Timur Batyrshin]]></name>
     <email><![CDATA[erthad@gmail.com]]></email>
@@ -15,9 +15,9 @@
   
   <entry>
     <title type="html"><![CDATA[Тестирование правил мониторинга]]></title>
-    <link href="http://erthad.name/blog/2014/03/27/testirovanie-pravil-monitoringha/"/>
+    <link href="http://timurb.github.io/blog/2014/03/27/testirovanie-pravil-monitoringha/"/>
     <updated>2014-03-27T21:53:00+04:00</updated>
-    <id>http://erthad.name/blog/2014/03/27/testirovanie-pravil-monitoringha</id>
+    <id>http://timurb.github.io/blog/2014/03/27/testirovanie-pravil-monitoringha</id>
     <content type="html"><![CDATA[<p>Регулярно хочется формализовать некоторые правила, по которым должен работать сервер как &ldquo;черный ящик&rdquo;.</p>
 
 <ul>
