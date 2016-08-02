@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
 
-  <title><![CDATA[Category: chef | Erthad's blog]]></title>
-  <link href="http://timurb.github.io/blog/categories/chef/atom.xml" rel="self"/>
-  <link href="http://timurb.github.io/"/>
-  <updated>2016-08-02T12:45:10+03:00</updated>
-  <id>http://timurb.github.io/</id>
+  <title><![CDATA[Category: chef | Timur Batyrshin's blog]]></title>
+  <link href="http://timurb.ru/blog/categories/chef/atom.xml" rel="self"/>
+  <link href="http://timurb.ru/"/>
+  <updated>2016-08-02T12:47:08+03:00</updated>
+  <id>http://timurb.ru/</id>
   <author>
     <name><![CDATA[Timur Batyrshin]]></name>
     <email><![CDATA[erthad@gmail.com]]></email>
@@ -15,9 +15,9 @@
   
   <entry>
     <title type="html"><![CDATA[Default attributes in chef]]></title>
-    <link href="http://timurb.github.io/blog/2014/10/24/default-attributes/"/>
+    <link href="http://timurb.ru/blog/2014/10/24/default-attributes/"/>
     <updated>2014-10-24T19:19:00+04:00</updated>
-    <id>http://timurb.github.io/blog/2014/10/24/default-attributes</id>
+    <id>http://timurb.ru/blog/2014/10/24/default-attributes</id>
     <content type="html"><![CDATA[<p>Как мы знаем, если мы в Chef используем какой-то произвольный атрибут <code>node.foobar</code>, и если у нас он в этот
 момент неопределен мы получаем exception.</p>
 
@@ -57,9 +57,9 @@ end
   
   <entry>
     <title type="html"><![CDATA[Разворачивание скриптов]]></title>
-    <link href="http://timurb.github.io/blog/2013/08/22/razvorachivaniie-skriptov/"/>
+    <link href="http://timurb.ru/blog/2013/08/22/razvorachivaniie-skriptov/"/>
     <updated>2013-08-22T08:45:00+04:00</updated>
-    <id>http://timurb.github.io/blog/2013/08/22/razvorachivaniie-skriptov</id>
+    <id>http://timurb.ru/blog/2013/08/22/razvorachivaniie-skriptov</id>
     <content type="html"><![CDATA[<p>Часто бывает нужно развернуть на удаленный хост (управляемый при помощи chef) какие-то скрипты.
 Это не проблема, но не менее часто в этих скриптах бывают нужны привязки конкретно к этому хосту.
 Можно, конечно, реализовать обработку параметров командной строки или загрузку данных из конфига,

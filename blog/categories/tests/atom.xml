@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
 
-  <title><![CDATA[Category: tests | Erthad's blog]]></title>
-  <link href="http://timurb.github.io/blog/categories/tests/atom.xml" rel="self"/>
-  <link href="http://timurb.github.io/"/>
-  <updated>2016-08-02T12:45:10+03:00</updated>
-  <id>http://timurb.github.io/</id>
+  <title><![CDATA[Category: tests | Timur Batyrshin's blog]]></title>
+  <link href="http://timurb.ru/blog/categories/tests/atom.xml" rel="self"/>
+  <link href="http://timurb.ru/"/>
+  <updated>2016-08-02T12:47:08+03:00</updated>
+  <id>http://timurb.ru/</id>
   <author>
     <name><![CDATA[Timur Batyrshin]]></name>
     <email><![CDATA[erthad@gmail.com]]></email>
@@ -15,9 +15,9 @@
   
   <entry>
     <title type="html"><![CDATA[TDD and Diffuse Mode]]></title>
-    <link href="http://timurb.github.io/blog/2015/01/04/tdd-and-diffuse-mode/"/>
+    <link href="http://timurb.ru/blog/2015/01/04/tdd-and-diffuse-mode/"/>
     <updated>2015-01-04T20:00:00+03:00</updated>
-    <id>http://timurb.github.io/blog/2015/01/04/tdd-and-diffuse-mode</id>
+    <id>http://timurb.ru/blog/2015/01/04/tdd-and-diffuse-mode</id>
     <content type="html"><![CDATA[<p>Сейчас смотрел видеоматериалы <a href="https://www.coursera.org/learn/learning-how-to-learn">курса об обучении</a> с Coursera.</p>
 
 <p>В первом модуле там говорится о существовании двух режимов мозга: focused mode и diffuse mode. Focused mode — режим в котором мы концентрируемся на какой-то задаче не отвлекаясь на посторонние раздражители. В diffuse mode мы, напротив, ни на чем не концентрируемся, расслабляя ум, и в этом режиме происходит другой характер работы над предметом.</p>

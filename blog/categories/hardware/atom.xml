@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
 
-  <title><![CDATA[Category: hardware | Erthad's blog]]></title>
-  <link href="http://timurb.github.io/blog/categories/hardware/atom.xml" rel="self"/>
-  <link href="http://timurb.github.io/"/>
-  <updated>2016-08-02T12:45:10+03:00</updated>
-  <id>http://timurb.github.io/</id>
+  <title><![CDATA[Category: hardware | Timur Batyrshin's blog]]></title>
+  <link href="http://timurb.ru/blog/categories/hardware/atom.xml" rel="self"/>
+  <link href="http://timurb.ru/"/>
+  <updated>2016-08-02T12:47:08+03:00</updated>
+  <id>http://timurb.ru/</id>
   <author>
     <name><![CDATA[Timur Batyrshin]]></name>
     <email><![CDATA[erthad@gmail.com]]></email>
@@ -15,9 +15,9 @@
   
   <entry>
     <title type="html"><![CDATA[Broadcom 4313 и Ubuntu 13.10]]></title>
-    <link href="http://timurb.github.io/blog/2014/04/07/broadcom-4313-i-ubuntu-13-dot-10/"/>
+    <link href="http://timurb.ru/blog/2014/04/07/broadcom-4313-i-ubuntu-13-dot-10/"/>
     <updated>2014-04-07T17:10:00+04:00</updated>
-    <id>http://timurb.github.io/blog/2014/04/07/broadcom-4313-i-ubuntu-13-dot-10</id>
+    <id>http://timurb.ru/blog/2014/04/07/broadcom-4313-i-ubuntu-13-dot-10</id>
     <content type="html"><![CDATA[<p>Прикупил я с год назад ноут <a href="http://market.yandex.ru/model-spec.xml?modelid=10451594&amp;hid=91013">Lenovo B590</a> и
 в целом все с ним нормально, за исключением проблем с Wi-Fi.</p>
 

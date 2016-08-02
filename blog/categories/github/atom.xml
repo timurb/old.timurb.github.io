@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
 
-  <title><![CDATA[Category: github | Erthad's blog]]></title>
-  <link href="http://timurb.github.io/blog/categories/github/atom.xml" rel="self"/>
-  <link href="http://timurb.github.io/"/>
-  <updated>2016-08-02T12:45:10+03:00</updated>
-  <id>http://timurb.github.io/</id>
+  <title><![CDATA[Category: github | Timur Batyrshin's blog]]></title>
+  <link href="http://timurb.ru/blog/categories/github/atom.xml" rel="self"/>
+  <link href="http://timurb.ru/"/>
+  <updated>2016-08-02T12:47:08+03:00</updated>
+  <id>http://timurb.ru/</id>
   <author>
     <name><![CDATA[Timur Batyrshin]]></name>
     <email><![CDATA[erthad@gmail.com]]></email>
@@ -15,9 +15,9 @@
   
   <entry>
     <title type="html"><![CDATA[Переименовал учетку Github]]></title>
-    <link href="http://timurb.github.io/blog/2014/06/07/pierieimienoval-uchietku-github/"/>
+    <link href="http://timurb.ru/blog/2014/06/07/pierieimienoval-uchietku-github/"/>
     <updated>2014-06-07T21:40:00+04:00</updated>
-    <id>http://timurb.github.io/blog/2014/06/07/pierieimienoval-uchietku-github</id>
+    <id>http://timurb.ru/blog/2014/06/07/pierieimienoval-uchietku-github</id>
     <content type="html"><![CDATA[<p>Переименовал учетку github в более короткую. Теперь я <a href="https://github.com/timurb">timurb</a> (был timurbatyrshin).</p>
 
 <p>Если увидите, что где-то что-то отвалилось из-за этого, просьба сообщать.</p>

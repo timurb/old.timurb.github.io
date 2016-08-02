@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
 
-  <title><![CDATA[Category: security | Erthad's blog]]></title>
-  <link href="http://timurb.github.io/blog/categories/security/atom.xml" rel="self"/>
-  <link href="http://timurb.github.io/"/>
-  <updated>2016-08-02T12:45:10+03:00</updated>
-  <id>http://timurb.github.io/</id>
+  <title><![CDATA[Category: security | Timur Batyrshin's blog]]></title>
+  <link href="http://timurb.ru/blog/categories/security/atom.xml" rel="self"/>
+  <link href="http://timurb.ru/"/>
+  <updated>2016-08-02T12:47:08+03:00</updated>
+  <id>http://timurb.ru/</id>
   <author>
     <name><![CDATA[Timur Batyrshin]]></name>
     <email><![CDATA[erthad@gmail.com]]></email>
@@ -15,9 +15,9 @@
   
   <entry>
     <title type="html"><![CDATA[PHPMyAdmin и Yandex SafeBrowsing]]></title>
-    <link href="http://timurb.github.io/blog/2013/10/16/phpmyadmin-i-yandex-safebrowsing/"/>
+    <link href="http://timurb.ru/blog/2013/10/16/phpmyadmin-i-yandex-safebrowsing/"/>
     <updated>2013-10-16T14:05:00+04:00</updated>
-    <id>http://timurb.github.io/blog/2013/10/16/phpmyadmin-i-yandex-safebrowsing</id>
+    <id>http://timurb.ru/blog/2013/10/16/phpmyadmin-i-yandex-safebrowsing</id>
     <content type="html"><![CDATA[<p>Иногда случается ситуация, когда <a href="http://api.yandex.ru/safebrowsing/">Yandex SafeBrowsing</a> <a href="http://www.yandex.com/infected?url=yandex.ru">помечает сайт</a>  как содержащий <code>Troj/JSRedir-MH</code>, причем, <a href="https://www.virustotal.com/">VirusTotal</a>  говорит, что сайт чистый по всем базам, кроме Yandex SafeBrowsing.
 В интернетах эту тему обсуждают много где, часто у людей эта проблема регулярно появляется и исчезает сама, в итоге приходят к выводу, что у яндекса что-то глючит.</p>
 

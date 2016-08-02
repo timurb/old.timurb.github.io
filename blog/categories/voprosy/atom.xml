@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
 
-  <title><![CDATA[Category: вопросы | Erthad's blog]]></title>
-  <link href="http://timurb.github.io/blog/categories/voprosy/atom.xml" rel="self"/>
-  <link href="http://timurb.github.io/"/>
-  <updated>2016-08-02T12:45:10+03:00</updated>
-  <id>http://timurb.github.io/</id>
+  <title><![CDATA[Category: вопросы | Timur Batyrshin's blog]]></title>
+  <link href="http://timurb.ru/blog/categories/voprosy/atom.xml" rel="self"/>
+  <link href="http://timurb.ru/"/>
+  <updated>2016-08-02T12:47:08+03:00</updated>
+  <id>http://timurb.ru/</id>
   <author>
     <name><![CDATA[Timur Batyrshin]]></name>
     <email><![CDATA[erthad@gmail.com]]></email>
@@ -15,9 +15,9 @@
   
   <entry>
     <title type="html"><![CDATA[Для чего используется смартфон]]></title>
-    <link href="http://timurb.github.io/blog/2013/08/28/dlia-chiegho-ispolzuietsia-smartfon/"/>
+    <link href="http://timurb.ru/blog/2013/08/28/dlia-chiegho-ispolzuietsia-smartfon/"/>
     <updated>2013-08-28T16:49:00+04:00</updated>
-    <id>http://timurb.github.io/blog/2013/08/28/dlia-chiegho-ispolzuietsia-smartfon</id>
+    <id>http://timurb.ru/blog/2013/08/28/dlia-chiegho-ispolzuietsia-smartfon</id>
     <content type="html"><![CDATA[<p>Я уже довольно давно не сторонник смартфонов по причине того, что стоят они во много раз дороже, чем
 обычные телефоны, а за что платятся деньги &mdash; не понятно.</p>
 

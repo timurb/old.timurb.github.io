@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
 
-  <title><![CDATA[Category: configuration-management | Erthad's blog]]></title>
-  <link href="http://timurb.github.io/blog/categories/configuration-management/atom.xml" rel="self"/>
-  <link href="http://timurb.github.io/"/>
-  <updated>2016-08-02T12:45:10+03:00</updated>
-  <id>http://timurb.github.io/</id>
+  <title><![CDATA[Category: configuration-management | Timur Batyrshin's blog]]></title>
+  <link href="http://timurb.ru/blog/categories/configuration-management/atom.xml" rel="self"/>
+  <link href="http://timurb.ru/"/>
+  <updated>2016-08-02T12:47:08+03:00</updated>
+  <id>http://timurb.ru/</id>
   <author>
     <name><![CDATA[Timur Batyrshin]]></name>
     <email><![CDATA[erthad@gmail.com]]></email>
@@ -15,9 +15,9 @@
   
   <entry>
     <title type="html"><![CDATA[Ansible -- беглый обзор]]></title>
-    <link href="http://timurb.github.io/blog/2013/10/21/ansible-bieghlyi-obzor/"/>
+    <link href="http://timurb.ru/blog/2013/10/21/ansible-bieghlyi-obzor/"/>
     <updated>2013-10-21T23:50:00+04:00</updated>
-    <id>http://timurb.github.io/blog/2013/10/21/ansible-bieghlyi-obzor</id>
+    <id>http://timurb.ru/blog/2013/10/21/ansible-bieghlyi-obzor</id>
     <content type="html"><![CDATA[<p>Бегло прошелся по докам к <a href="http://www.ansibleworks.com/docs/">Ansible</a>.
 Попробую сравнить с <a href="http://www.opscode.com/chef/">Chef</a> и <a href="http://puppetlabs.com/puppet/puppet-open-source">Puppet</a>, с которыми у меня есть хороший опыт работы.</p>
 
